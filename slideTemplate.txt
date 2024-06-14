@@ -22,3 +22,26 @@
 <section>Slide 2</section>
 
 <section>Slide 3</section>
+
+
+Totally there are  5- Templates 
+
+One is header and one full body 
+one more is 75 25 thing 
+one more is first slide 
+one more is a3 
+one more is 50 50
+
+So if you develop one template for each one of it , that's enough 
+
+I will generate AJS to dynamically add as many things as possible 
+
+So the user will see like a add slide button, when he clicks add slide, he will see 5 things and the small representation of how th slide can looks
+like if it is 50 50 a small 50 50 jaise icon show karna 
+same for 75 25, etc 
+
+and then jo template select kiya woh add ho jaayega 
+
+Then we can give an option in each slide left hand side, ki move up move down, jisse ek slide ko we can push up or down , agar i wanted it to be slide 3 and it has been by mistake added near 5 , i can use move up and 5 se 3 bana sakta 
+
+Then the code we develop for slideshow , we will deploy as a page in the main a3 wala page itself , try it out ke bagal me slideshow karka laga denge 
