@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Template</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        html,
+        body {
+            aspect-ratio: 1.414/1;
+        }
+
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        .arrow {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        body {
+            display: table-cell;
+            vertical-align: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 420mm;
+            height: 297mm;
+        }
+
+        .container {
+            width: 42cm;
+            height: 29.7cm;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #000;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            aspect-ratio: 1.414/1;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            height: 50px;
+        }
+
+        .header div {
+            text-align: right;
+            font-size: 12px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            background-color: #8c1c1c;
+            color: #fff;
+            padding: 5px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 0;
+        }
+
+        .left-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .right-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right-column .instruction-flexbar {
+            align-self: flex-end;
+        }
+
+        .left-column .section {
+            width: calc(100% - 10px);
+            border: 1px solid #000;
+            padding: 1px;
+            box-sizing: border-box;
+            margin-right: 10px;
+        }
+
+        .sustain-plan,
+        .flexbar {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+
+        .right-column .section {
+            width: 100%;
+            border: 0px solid #000;
+            padding: 0px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            flex-grow: 0;
+        }
+
+        .key-drivers,
+        .interventions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .key-drivers .driver,
+        .interventions {
+            border: 4px solid;
+            padding: 4px;
+        }
+
+        .intervention {
+            height: 30px;
+            padding: 3px;
+            border: 2px solid;
+        }
+
+        .key-drivers {
+            flex-grow: 1;
+        }
+
+        .interventions {
+            flex-grow: 2;
+        }
+
+        .sustain-plan {
+            width: 25%;
+            border: 1px solid #000;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        .sustain-plan table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        .sustain-plan th,
+        .sustain-plan td {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: left;
+        }
+
+        .reliability-level {
+            font-size: 12px;
+            flex: 2;
+        }
+
+        .maturity-bars {
+            font-size: 12px;
+            flex: 1;
+        }
+
+        .flexbar {
+            display: flex;
+        }
+
+        .topflex {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+
+        }
+
+        .bar {
+            width: 50px;
+            margin: 2.7px;
+        }
+
+        .maturity-bars {
+            margin-top: 50px;
+            margin-left: 5px;
+        }
+
+        td {
+            border: 1px solid black;
+            height: 20px;
+        }
+
+        #arrowSvg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Allow clicks to pass through */
+    }
+
+        .input-ps {
+            height: 72px;
+        }
+
+        .input-ng {
+            height: 90px;
+        }
+
+        .input-ts {
+            height: 90px;
+        }
+
+        .cs-main {
+            height: 250px;
+        }
+
+        .cs-text{
+            margin-bottom: 10px;
+        }
+
+        .delete-main {
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            position:relative;
+        }
+
+        .delete-btn {
+            position:absolute;
+            right:425px;
+        }
+
+        .delete-interv {
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            position:relative;
+        }
+
+        .delete-btn2 {
+            position:absolute;
+            right:23px;
+        }
+
+        .delete-reportTo-main {
+            display: block;
+            margin-left:auto;
+            margin-right:auto;
+            position:relative;
+        }
+
+        .delete-reportTo {
+            position:absolute;
+            right:0px;
+        }
+
+        .personal-logo {
+            height: 85px;
+            width: 150px;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 150px;
+            
+
+        }
+
+        .header {
+            display: flex;
+        }
+
+        .select-arrow {
+            height: 45px;
+            width: 350px;
+            border: solid 3px #8c1c1c;
+        }
+
+        .arrow-main {
+            display: block;
+            margin-left:auto;
+            margin-right:auto;
+            position:relative;
+        }
+
+        .add-arrow-btn {
+            position:absolute;
+            right:0px;
+        }
+
+        .arrow-table {
+            margin-top: 5px;
+            width: 704px;
+            border: solid 3px #8c1c1c;
+            
+        }
+        .arrow-table th {
+            background-color: #8c1c1c;
+            color: #fff;
+
+        }
+
+        .arrow-table tr {
+            text-align: center;
+        }
+
+        .graph-flex {
+            display: block;
+            margin-left:auto;
+            margin-right:auto;
+            position:relative;
+        }
+
+        .graph-main {
+            display: flex;
+        }
+
+        .graph2 {
+            position:absolute;
+            right:4px;
+        }
+
+        .instruction-flexbar {
+            display: flex;
+            border: 1px solid black;
+            padding: 5px;
+            align-self: flex-end;
+            
+        }
+
+        .run-chart, .flow-chart {
+            height: 220px;
+            width: 220px;
+        }
+
+        /* Header styles */
+        .page-header {
+            width:auto;
+            background-color: #8c1c1c;
+            padding: 20px 40PX;;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-header img {
+            height: 50px;
+        }
+
+        .page-nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .page-nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .page-nav-links a:hover {
+            text-decoration: underline;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Main container -->
+    <div class="page-container">
+        <!-- Header with navigation links -->
+        <div class="page-header">
+            <img ng-click="navigate('home')" src="raghavaLogo.png" alt="Stanford Medicine" style="height: 50px;">
+            <div class="page-nav-links">
+                <a href="#" ng-click="navigate('home')">Home</a>
+                <a href="#" ng-click="navigate('about')">About the Initiative</a>
+                <a href="#" ng-click="navigate('tryItOut')">Try It Out</a>
+            </div>
+        </div>
+
+        <!-- Home page -->
+        <div ng-show="visible.homeActive" class="home">
+            <div class="title"></div>
+            <div class="section">
+                <div class="section-title">Welcome to Our Project</div>
+                <p>This is the home page of our initiative. Here you can find information about our goals and progress.</p>
+            </div>
+        </div>
+
+        <!-- About page -->
+        <div ng-show="visible.aboutUsActive" class="about">
+            <div class="title"></div>
+            <div class="section">
+                <div class="section-title">Our Mission</div>
+                <p>This initiative aims to improve healthcare through innovative solutions and research. Our team is dedicated to achieving measurable outcomes that benefit patients and medical professionals.</p>
+            </div>
+        </div>
+
+
+        <!-- Try It Out page (existing content) -->
+        <div ng-show="visible.tioActive" class="try-it-out">
+            <div class="title"></div>
+            <div class="section">
+                <div class="section-title">Try it out</div>
+            </div>
+            <!-- Existing content here -->
+            <div class="container">
+                <div class="header">
+                   <div class="stanford-logo"><img src = "./Stanford_Logo.svg" alt="Stanford Medicine" style="height: 110px;"></div>
+                    <div class="personal-logo"><img style="height: 100px;" src = "./Kidwai_Memorial_Institute_of_Oncology_Logo.svg.png"></div>
+                    <div class="ncg-logo"><img src="NationalCancerGrid.png" alt="National Cancer Grid" style="height: 110px;"></div>
+                </div>
+                <div class="title" ng-repeat="i in projectTitle">
+                <span ng-click="editKey(i)">{{i.name}}</span>
+                    <span ng-show="i.editing">
+                        <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
+                    </span>
+                </div>
+                <div class="main-content">
+                    <div class="left-column">
+                        <div class="section">
+                            <div class="section-title">Problem Statement</div>
+                            <div class="input-ps" ng-repeat="i in problemStatement">
+                                <span ng-click="editKey(i)">{{i.name}}</span>
+                                <span ng-show="i.editing">
+                                    <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="section-title">Background</div>
+                            <div class="input-ng" ng-repeat="i in background">
+                                <span ng-click="editKey(i)">{{i.name}}</span>
+                                <span ng-show="i.editing">
+                                    <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="section-title">Target State: SMART Goal</div>
+                            <div class="input-ts" ng-repeat="i in targetState">
+                                <span ng-click="editKey(i)">{{i.name}}</span>
+                                <span ng-show="i.editing">
+                                    <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="section-title">Current State: Identify Target / Actual / Gap</div>
+                            <div class="cs-main">
+                            <div class = "cs-text" ng-repeat="i in currentState">
+                                <span ng-click="editKey(i)">{{i.name}}</span>
+                                <span ng-show="i.editing">
+                                    <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
+                                </span>
+                            </div>
+                            <div class="graph-flex">
+                            <div class="graph-main">
+                                <div class="graph1"><img class="run-chart" src="./Screenshot 2024-06-02 151729.png" alt=""></div>
+        
+                                <div class="graph2"><img class="flow-chart" src="./1.png" alt=""></div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="section">
+                            <div class="section-title">Analysis</div>
+        
+                        </div>
+                    </div>
+                    <div class="right-column">
+        
+        
+        
+                        <div class="topflex">
+        
+        
+        
+        
+                            <div class="section key-drivers">
+                                <div class="section-title">Key Drivers</div>
+                                <table id="keyDrivers" class="key-driver">
+                                    <tr ng-repeat="k in keyVar">
+                                        <td>
+                                            <span ng-click="editKey(k)">{{k.name}}</span>
+                                            <span ng-show="k.editing">
+                                                <input class="delete-main" type="text" ng-model="k.name" ng-blur="saveKey(k,'key')">
+                                            </span>
+                                            <span ng-show="!k.editing">
+                                                <img class="delete-btn" ng-show="showButtons" src="Delete_icon.svg" ng-click="deleteKey($index,'key')"></img>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <img ng-show="showButtons" src="addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addEmptyKey('key')"></img>
+                            </div>
+        
+        
+                            <svg id="arrowSvg" width="100%" height="100%">
+                                <defs>
+                                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                        <polygon points="0 0, 10 3.5, 0 7" />
+                                    </marker>
+                                </defs>
+                                <g ng-repeat="path in arrows" >
+                                    <path class="arrow" ng-attr-d="{{path.path}}" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+                                </g>
+                            </svg>
+                            
+        
+        
+        
+                            <div class="section interventions">
+                                <div class="section-title">Interventions / Countermeasures</div>
+                                <table id="myTable" class="my-table">
+                                    <tr ng-repeat="k in intVar">
+                                        <td>
+                                            <span ng-click="editKey(k)">{{k.name}}</span>
+                                            <span ng-show="k.editing">
+                                                <input class="delete-interv" type="text" ng-model="k.name" ng-blur="saveKey(k,'intervention')">
+                                            </span>
+                                            <span ng-show="!k.editing">
+                                                <img class="delete-btn2" ng-show="showButtons" src="Delete_icon.svg" ng-click="deleteKey($index,'intervention')"></img>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <img ng-show="showButtons" src="addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addEmptyKey('intervention')"></img>
+                            </div>
+                            
+                            </div>
+                            <img ng-show="showButtons" style="height: 35px; width: 35px; align-self: center;" src="addArrowsIcon.png" alt="Add Arrows" ng-click="arrowEditingStart()">
+        
+        
+        
+        
+                            <span ng-show="showButtons">
+                                <div ng-show="arrowEdit"> 
+                                    <div class="arrow-main">
+                                        <select class="select-arrow" ng-model="arrow.selectedKey" name="oKey" id="oKey">
+                                            <optgroup label="Key Drivers">
+                                                <option ng-repeat="oK in keyVar" value="{{oK.name}}">{{oK.name}}</option>
+                                            </optgroup>
+                                        </select>
+                                        <select class="select-arrow" ng-model="arrow.selectedInt" name="oInt" id="oInt">
+                                            <optgroup label="Interventions">
+                                                <option ng-repeat="oI in intVar" value="{{oI.name}}">{{oI.name}}</option>
+                                            </optgroup>
+                                        </select> 
+                                        <img class="add-arrow-btn" ng-click="arrowGenerate(arrow.selectedKey, arrow.selectedInt)" src="submitArrowLogo.png" alt="Submit">
+                                    </div>
+                                    
+                                
+                                    <table class="arrow-table" border = "1">
+                                    <tr>
+                                        <th>LHS</th>
+                                        <th>RHS</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr ng-repeat="arrow in arrows">
+                                        <td>
+                                            <span ng-show="!arrow.editing">{{arrow.lhs}}</span>
+                                            <input ng-show="arrow.editing" type="text" ng-model="arrow.lhs" ng-blur="saveArrow(arrow)">
+                                        </td>
+                                        <td>
+                                            <span ng-show="!arrow.editing">{{arrow.rhs}}</span>
+                                            <input ng-show="arrow.editing" type="text" ng-model="arrow.rhs" ng-blur="saveArrow(arrow)">
+                                        </td>
+                                        <td>
+                                            <button ng-click="editArrow(arrow)">Edit</button>
+                                            <button ng-click="deleteArrow($index)">Delete</button>
+                                        </td>
+                                    </tr>
+                                    </table>
+        
+                                    <img src="doneAddingArrows.png" style="align-self: centre ;" alt="Done with adding Arrows" ng-click="arrowEditingEnd()">
+                            </div> 
+                                
+                            </span>
+                       
+        
+        
+        
+                        <div class="sustain-plan section">
+                            <div class="section-title">Sustain Plan</div>
+                            <table>
+                                <tr>
+                                    <th>Activity to sustain</th>
+                                    <th>Owner</th>
+                                    <th>Sustain method and frequency</th>
+                                    <th>Report to</th>
+                                </tr>
+                                <tr ng-repeat="i in sustainPlan">
+                                    <div>
+                                        <th ng-click="editSustainPlan(i,'activity')">
+                                            {{i.activity.name}}
+                                            <span ng-show="i.activity.editing">
+                                                <input type="text"  ng-model="i.activity.name" ng-blur="saveSustainPlan(i,'activity')">
+                                            </span>
+                                        </th>
+                                        <th ng-click="editSustainPlan(i,'owner')">
+                                            {{i.owner.name}}
+                                            <span ng-show="i.owner.editing">
+                                                <input type="text"  ng-model="i.owner.name" ng-blur="saveSustainPlan(i,'owner')">
+                                            </span>
+                                        </th>
+                                        <th ng-click="editSustainPlan(i, 'sustainMethod')">
+                                            {{i.sustainMethod.name}}
+                                            <span ng-show="i.sustainMethod.editing">
+                                                <input type="text"  ng-model="i.sustainMethod.name" ng-blur="saveSustainPlan(i,'sustainMethod')">
+                                            </span>
+                                        </th>
+                                        <th class="delete-reportTo-main" ng-click="editSustainPlan(i, 'reportTo')">
+                                            {{i.reportTo.name}}
+                                            <span ng-show="i.reportTo.editing">
+                                                <input type="text"  ng-model="i.reportTo.name" ng-blur="saveSustainPlan(i,'reportTo')">
+                                            </span>
+                                            <span ng-show="!i.activity.editing && !i.owner.editing && !i.sustainMethod.editing && !i.reportTo.editing">
+                                                <img class="delete-reportTo" ng-show="showButtons" src = "Delete_icon.svg" ng-click = "deleteSustainPlan(i)" ></img>
+                                            </span>
+                                        </th>
+                                    </div>
+                                </tr>
+                            </table>
+                        </div>
+                            <img ng-show="showButtons" src="addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addSustainPlan()"></img>
+                            
+                            <div class="instruction-flexbar">
+                                <div class="reliability-level">
+                                    <p>Reliability Level:</p>
+                                    <ol>
+                                        <li>Individuals: Feedback, checklists, training, basic standards</li>
+                                        <li>Procedures: Embedded standard work, reminders, constraints</li>
+                                        <li>Systems: Process design, fail safes, physical layout, built-in feedback, automated
+                                            systems, concentration of responsibility</li>
+                                    </ol>
+                                </div>
+                                <div>
+                                    <p>Maturity Bars:</p>
+                                    <ul>
+                                        <li>0: Untested idea </li>
+                                        <li>1: Early test / PDCA </li>
+                                        <li>2: Multiple PDCAs </li>
+                                        <li>3: Early implementation </li>
+                                        <li>4: Working well in operation </li>
+                                    </ul>
+                                </div>
+                                <div class="maturity-bars">
+                                    <progress class="bar" id="file" value="0" max="100"> 32% </progress><br>
+                                    <progress id="file" class="bar" value="25" max="100"> 32% </progress><br>
+                                    <progress id="file" class="bar" value="50" max="100"> 32% </progress><br>
+                                    <progress id="file" class="bar" value="75" max="100"> 32% </progress><br>
+                                    <progress id="file" class="bar" value="100" max="100"> 32% </progress>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <img src="downloadButton.png" ng-click="downloadPDF()" alt="Click to Download">
+                <h1>When you click Download all the buttons will be hidden for download</h1> 
+            </div>
+    
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+
+            //Key driver functions
+            //$scope.keyVar = [{ name: 'Enter max of 94 Characters' }];
+
+            //$scope.intVar = [{ name: 'Enter max of 94 Caracters' }];
+
+            $scope.keyVar = [
+                {name: 'Item 1'},
+                {name: 'Item 2'},
+                {name: 'Item 3'}
+            ];
+            $scope.intVar = [
+                {name: 'Item A'},
+                {name: 'Item B'},
+                {name: 'Item C'}
+            ];
+            $scope.projectTitle = [{name : 'Enter Project title', editing : false}];
+
+            $scope.problemStatement = [{ name: 'Enter max 300 characters', editing: false }];
+
+            $scope.background = [{ name: 'Enter max 400 characters', editing: false }];
+
+            $scope.targetState = [{ name: 'Enter max 450 characters', editing: false }];
+
+            $scope.currentState = [{name : 'Enter max 100 characters', editing : false}];
+
+            $scope.sustainPlan = [{
+                    activity: {name: 'Enter activity',editing: false} ,
+                    owner:{name: 'Enter Owner',editing: false}, 
+                    sustainMethod: {name: 'Enter Sustain method', editing: false},
+                    reportTo: {name: 'Enter Report To',editing: false}
+                }];
+
+            $scope.showButtons=true;
+            $scope.visible={homeActive:true,aboutUsActive:false,tioActive:false};
+
+            $scope.navigate = function(page){
+                if(page === 'home'){
+                    $scope.visible={homeActive:true,aboutUsActive:false,tioActive:false};
+                }
+                else if(page === 'about'){
+                    $scope.visible={homeActive:false,aboutUsActive:true,tioActive:false};
+                }
+                else if(page === 'tryItOut'){
+                    $scope.visible={homeActive:false,aboutUsActive:false,tioActive:true};
+                }
+            };
+
+            
+
+//code for arrow generation
+$scope.arrowEditingStart = function(){
+    $scope.arrowEdit = true;
+}
+
+$scope.arrowEditingEnd = function(){
+    $scope.arrowEdit = false;
+}
+            $scope.arrowPath = ''; // Initialize arrowPath
+
+            $scope.arrows = []; // Array to store all arrow paths
+
+$scope.arrowGenerate = function(selectedKey, selectedInt) {
+    // Find the index of the selected items in their respective arrays
+    var keyIndex = $scope.keyVar.findIndex(k => k.name === selectedKey);
+    var intIndex = $scope.intVar.findIndex(i => i.name === selectedInt);
+
+    if (keyIndex !== -1 && intIndex !== -1) {
+        // Calculate positions (adjust these based on your actual layout)
+        var keyElement = document.querySelector(`#keyDrivers tr:nth-child(${keyIndex + 1}) td`);
+        var intElement = document.querySelector(`#myTable tr:nth-child(${intIndex + 1}) td`);
+        
+        if (keyElement && intElement) {
+            var keyRect = keyElement.getBoundingClientRect();
+            var intRect = intElement.getBoundingClientRect();
+
+            var svgRect = document.getElementById('arrowSvg').getBoundingClientRect();
+
+            var keyX = keyRect.right - svgRect.left;
+            var keyY = keyRect.top + keyRect.height / 2 - svgRect.top;
+
+            var intX = intRect.left - svgRect.left;
+            var intY = intRect.top + intRect.height / 2 - svgRect.top;
+
+            // Generate arrow path using SVG path syntax
+            var newArrowPath = `M${keyX},${keyY} L${intX},${intY}`;
+            $scope.arrows.push({
+                path: newArrowPath,
+                lhs: selectedKey,
+                rhs: selectedInt,
+                editing: false
+            }); // Add the new arrow path to the array
+            $scope.updateArrows(); // Update the SVG paths
+        }
+    } else {
+        // Handle error if selected items are not found
+        console.error('Selected items not found.');
+    }
+};
+
+$scope.updateArrows = function() {
+    // Combine all paths into a single string separated by space
+    $scope.arrowPaths = $scope.arrows.map(a => a.path).join(' ');
+};
+
+$scope.editArrow = function(arrow) {
+    arrow.editing = true;
+};
+
+$scope.saveArrow = function(arrow) {
+    arrow.editing = false;
+    // Recalculate the arrow path based on the new lhs and rhs values
+    var keyIndex = $scope.keyVar.findIndex(k => k.name === arrow.lhs);
+    var intIndex = $scope.intVar.findIndex(i => i.name === arrow.rhs);
+
+    if (keyIndex !== -1 && intIndex !== -1) {
+        var keyElement = document.querySelector(`#keyDrivers tr:nth-child(${keyIndex + 1}) td`);
+        var intElement = document.querySelector(`#myTable tr:nth-child(${intIndex + 1}) td`);
+        
+        if (keyElement && intElement) {
+            var keyRect = keyElement.getBoundingClientRect();
+            var intRect = intElement.getBoundingClientRect();
+
+            var svgRect = document.getElementById('arrowSvg').getBoundingClientRect();
+
+            var keyX = (keyRect.right - svgRect.left)-20; //Added -20
+            var keyY = (keyRect.top + keyRect.height / 2 - svgRect.top) -20; //Added  -20
+
+            var intX = (intRect.left - svgRect.left) - 20;
+            var intY = (intRect.top + intRect.height / 2 - svgRect.top) -20;
+
+            arrow.path = `M${keyX},${keyY} L${intX},${intY}`;
+            $scope.updateArrows(); // Update the SVG paths
+        }
+    }
+};
+
+$scope.deleteArrow = function(index) {
+    $scope.arrows.splice(index, 1);
+    $scope.updateArrows(); // Update the SVG paths
+};
+
+//Sustain Plan Functions
+            $scope.addSustainPlan = function () {
+                $scope.sustainPlan.push({
+                    activity: {name: '',editing: true} ,
+                    owner:{name: '',editing: true}, 
+                    sustainMethod: {name: '', editing: true},
+                    reportTo: {name: '',editing: true}
+                });
+            };
+
+            $scope.editSustainPlan = function(i,colname){
+                if(colname === 'activity'){
+                    i.activity.editing = true;
+                }
+                else if(colname === 'owner'){
+                    i.owner.editing = true;
+                }
+                else if(colname === 'sustainMethod'){
+                    i.sustainMethod.editing = true;
+                }
+                else if(colname === 'reportTo'){
+                    i.reportTo.editing = true;
+                }
+                
+            }
+
+            $scope.saveSustainPlan = function(i,colname){
+                if(colname === 'activity'){
+                    i.activity.editing = false;
+                }
+                else if(colname === 'owner'){
+                    i.owner.editing = false;
+                }
+                else if(colname === 'sustainMethod'){
+                    i.sustainMethod.editing = false;
+                }
+                else if(colname === 'reportTo'){
+                    i.reportTo.editing = false;
+                }
+            }
+
+
+
+
+            $scope.deleteSustainPlan = function(i){
+                const ind = $scope.sustainPlan.indexOf(i);
+                if (ind !== -1){
+                    $scope.sustainPlan.splice(ind,1);
+                }
+            };
+
+ //Functions for Key and Intervention
+
+            $scope.addEmptyKey = function (varname) {
+                if (varname === "key") {
+                    $scope.keyVar.push({ name: '', editing: true });
+                }
+                else if (varname === "intervention") {
+                    $scope.intVar.push({ name: '', editing: true });
+                }
+
+            };
+
+            $scope.editKey = function (k) {
+                k.editing = true;
+            };
+
+            $scope.saveKey = function (k) {
+                if (k.name !== '') {
+                    k.editing = false;
+                }
+            };
+
+            $scope.deleteKey = function (ind, varname) {
+                if (ind !== -1) {
+                    if (varname === "key") {
+                        $scope.keyVar.splice(ind, 1);
+                    }
+                    else if (varname === "intervention") {
+                        $scope.intVar.splice(ind, 1);
+                    }
+
+                }
+            };
+
+            $scope.downloadPDF = function(){
+                //Here all Buttons will be hided and then we will get to see the downloaded pdf
+                $scope.showButtons=false;
+            };
+
+        });
+    </script>
+
+</body>
+
+</html>
