@@ -16,6 +16,8 @@
         3. Show all slides
         4. Stop slideshow
         5. Show pointer(optional)
+        6. Add page numbers(RHS)
+
     </footer>
 </section>
 
