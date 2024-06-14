@@ -397,7 +397,7 @@
     <div class="page-container">
         <!-- Header with navigation links -->
         <div class="page-header">
-            <img ng-click="navigate('home')" src="raghavaLogo.png" alt="Stanford Medicine" style="height: 50px;">
+            <img ng-click="navigate('home')" src="./Static/raghavaLogo.png" alt="Stanford Medicine" style="height: 50px;">
             <div class="page-nav-links">
                 <a href="#" ng-click="navigate('home')">Home</a>
                 <a href="#" ng-click="navigate('about')">About the Initiative</a>
@@ -433,9 +433,9 @@
             <!-- Existing content here -->
             <div class="container">
                 <div class="header">
-                   <div class="stanford-logo"><img src = "./Stanford_Logo.svg" alt="Stanford Medicine" style="height: 110px;"></div>
-                    <div class="personal-logo"><img style="height: 100px;" src = "./Kidwai_Memorial_Institute_of_Oncology_Logo.svg.png"></div>
-                    <div class="ncg-logo"><img src="NationalCancerGrid.png" alt="National Cancer Grid" style="height: 110px;"></div>
+                   <div class="stanford-logo"><img src = "./Static/Stanford_Logo.svg" alt="Stanford Medicine" style="height: 110px;"></div>
+                    <div class="personal-logo"><img style="height: 100px;" src = "./Static/Kidwai_Memorial_Institute_of_Oncology_Logo.svg.png"></div>
+                    <div class="ncg-logo"><img src="./Static/NationalCancerGrid.png" alt="National Cancer Grid" style="height: 110px;"></div>
                 </div>
                 <div class="title" ng-repeat="i in projectTitle">
                 <span ng-click="editKey(i)">{{i.name}}</span>
@@ -483,9 +483,9 @@
                             </div>
                             <div class="graph-flex">
                             <div class="graph-main">
-                                <div class="graph1"><img class="run-chart" src="./Screenshot 2024-06-02 151729.png" alt=""></div>
+                                <div class="graph1"><img class="run-chart" src="./Static/Screenshot 2024-06-02 151729.png" alt=""></div>
         
-                                <div class="graph2"><img class="flow-chart" src="./1.png" alt=""></div>
+                                <div class="graph2"><img class="flow-chart" src="./Static/1.png" alt=""></div>
                             </div>
                             </div>
                         </div>
@@ -514,12 +514,12 @@
                                                 <input class="delete-main" type="text" ng-model="k.name" ng-blur="saveKey(k,'key')">
                                             </span>
                                             <span ng-show="!k.editing">
-                                                <img class="delete-btn" ng-show="showButtons" src="Delete_icon.svg" ng-click="deleteKey($index,'key')"></img>
+                                                <img class="delete-btn" ng-show="showButtons" src="./Static/Delete_icon.svg" ng-click="deleteKey($index,'key')"></img>
                                             </span>
                                         </td>
                                     </tr>
                                 </table>
-                                <img ng-show="showButtons" src="addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addEmptyKey('key')"></img>
+                                <img ng-show="showButtons" src="./Static/addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addEmptyKey('key')"></img>
                             </div>
         
         
@@ -547,16 +547,16 @@
                                                 <input class="delete-interv" type="text" ng-model="k.name" ng-blur="saveKey(k,'intervention')">
                                             </span>
                                             <span ng-show="!k.editing">
-                                                <img class="delete-btn2" ng-show="showButtons" src="Delete_icon.svg" ng-click="deleteKey($index,'intervention')"></img>
+                                                <img class="delete-btn2" ng-show="showButtons" src="./Static/Delete_icon.svg" ng-click="deleteKey($index,'intervention')"></img>
                                             </span>
                                         </td>
                                     </tr>
                                 </table>
-                                <img ng-show="showButtons" src="addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addEmptyKey('intervention')"></img>
+                                <img ng-show="showButtons" src="./Static/addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addEmptyKey('intervention')"></img>
                             </div>
                             
                             </div>
-                            <img ng-show="showButtons" style="height: 35px; width: 35px; align-self: center;" src="addArrowsIcon.png" alt="Add Arrows" ng-click="arrowEditingStart()">
+                            <img ng-show="showButtons" style="height: 35px; width: 35px; align-self: center;" src="./Static/addArrowsIcon.png" alt="Add Arrows" ng-click="arrowEditingStart()">
         
         
         
@@ -574,7 +574,7 @@
                                                 <option ng-repeat="oI in intVar" value="{{oI.name}}">{{oI.name}}</option>
                                             </optgroup>
                                         </select> 
-                                        <img class="add-arrow-btn" ng-click="arrowGenerate(arrow.selectedKey, arrow.selectedInt)" src="submitArrowLogo.png" alt="Submit">
+                                        <img class="add-arrow-btn" ng-click="arrowGenerate(arrow.selectedKey, arrow.selectedInt)" src="./Static/submitArrowLogo.png" alt="Submit">
                                     </div>
                                     
                                 
@@ -600,7 +600,7 @@
                                     </tr>
                                     </table>
         
-                                    <img src="doneAddingArrows.png" style="align-self: centre ;" alt="Done with adding Arrows" ng-click="arrowEditingEnd()">
+                                    <img src="./Static/doneAddingArrows.png" style="align-self: centre ;" alt="Done with adding Arrows" ng-click="arrowEditingEnd()">
                             </div> 
                                 
                             </span>
@@ -643,14 +643,14 @@
                                                 <input type="text"  ng-model="i.reportTo.name" ng-blur="saveSustainPlan(i,'reportTo')">
                                             </span>
                                             <span ng-show="!i.activity.editing && !i.owner.editing && !i.sustainMethod.editing && !i.reportTo.editing">
-                                                <img class="delete-reportTo" ng-show="showButtons" src = "Delete_icon.svg" ng-click = "deleteSustainPlan(i)" ></img>
+                                                <img class="delete-reportTo" ng-show="showButtons" src = "./Static/Delete_icon.svg" ng-click = "deleteSustainPlan(i)" ></img>
                                             </span>
                                         </th>
                                     </div>
                                 </tr>
                             </table>
                         </div>
-                            <img ng-show="showButtons" src="addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addSustainPlan()"></img>
+                            <img ng-show="showButtons" src="./Static/addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addSustainPlan()"></img>
                             
                             <div class="instruction-flexbar">
                                 <div class="reliability-level">
@@ -684,7 +684,7 @@
                     </div>
                     
                 </div>
-                <img src="downloadButton.png" ng-click="downloadPDF()" alt="Click to Download">
+                <img src="./Static/downloadButton.png" ng-click="downloadPDF()" alt="Click to Download">
                 <h1>When you click Download all the buttons will be hidden for download</h1> 
             </div>
     
