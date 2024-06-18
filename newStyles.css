@@ -3,7 +3,16 @@ body {
     justify-content: center;
 }
 
-.section1 {
+.flexBody {
+    display: flex;
+    flex-direction: column;
+}
+
+.bodyLCRFlex {
+    display: flex;
+}
+
+.nxtSection {
     position: relative;
     border: 1px solid black;
     padding: 10px;
@@ -17,9 +26,14 @@ body {
     justify-content: space-between;
 }
 
-.sectionMain1 {
+.stanford-logo {
+    width: 200px;
+}
+
+.sectionBCenter {
     display: flex;
     flex-direction: column;
+    margin: 5px;
 }
 
 .title1 {
@@ -28,7 +42,11 @@ body {
 }
 
 .hrRule {
-    color:#8c1c1c ;
+    height: 4px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+    background-color: #8c1c1c;
+    border-radius: 4px;
 }
 
 
@@ -69,7 +87,7 @@ body {
 
 .parentSection {
     display: grid;
-    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
 }
 
 .nxtSection {
@@ -108,3 +126,32 @@ body {
 .page-nav-links a:hover {
     text-decoration: underline;
 }
+
+.hr1 {
+    border-color: maroon;
+}
+
+.title1 {
+    font-size: 35px;
+    color: rgb(212, 0, 0);
+}
+
+.para1 {
+    font-size: 20px;
+    color: rgb(212, 0, 0);
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Page 2 */
+
+.container2 {
+    display: flex;
+}
+
+.spanDuration {
+    color: rgb(212, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+}
+
