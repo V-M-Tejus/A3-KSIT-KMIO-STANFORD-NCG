@@ -47,3 +47,77 @@ and then jo template select kiya woh add ho jaayega
 Then we can give an option in each slide left hand side, ki move up move down, jisse ek slide ko we can push up or down , agar i wanted it to be slide 3 and it has been by mistake added near 5 , i can use move up and 5 se 3 bana sakta 
 
 Then the code we develop for slideshow , we will deploy as a page in the main a3 wala page itself , try it out ke bagal me slideshow karka laga denge 
+
+
+
+
+body
+    {
+        main-setion-flex
+            {
+                slide-1-section
+                    { 
+                        header{}
+                        hr
+                        div-body(75:25,50:50,0:100);
+                        footer{}
+                    }
+                slide-2-section
+                    {
+                        head-hr-divbody-footer    
+                    }
+                slide-3-section
+                    {
+                        head-hr-divbody-footer
+                    }
+                .
+                .
+                .
+                .
+                slide-n-section
+                    {
+
+                    }
+            }
+    }
+
+
+
+
+
+
+    body
+        {
+            webpage-header{nav-links}
+            main-section-flex
+                {
+
+                    header{whatever things / includes hr}
+                    if (page-1){
+                       display heading of competition 
+                       display institute name
+                       go to footer directly   
+                    }
+                    else{
+                            {{Dynamic -Body includes the body either 75 25 or 50 50 or 100}}
+                            {
+                                if (visible.7527){
+                                    7525-body
+                                    inside-flex{
+                                    div(75)
+                                    div(25)
+                                    }
+                                }
+                                if (visible.5050){
+
+                                }
+                                if(visible.100){
+
+                                }
+                            }
+                        }
+                    footer{navigating slides optins < |  all |  > | pointer | end}
+                     
+                    }
+                    
+        }
