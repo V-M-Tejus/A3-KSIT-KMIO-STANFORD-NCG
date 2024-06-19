@@ -68,18 +68,44 @@ app.controller("myCtrl", function ($scope) {
         homeActive: true,
         aboutUsActive: false,
         tioActive: false,
+        slideEdit:false,
+        slideShow: false
       };
     } else if (page === "about") {
       $scope.visible = {
         homeActive: false,
         aboutUsActive: true,
         tioActive: false,
+        slideEdit: false,
+        slideShow: false
       };
     } else if (page === "tryItOut") {
       $scope.visible = {
         homeActive: false,
         aboutUsActive: false,
         tioActive: true,
+        slideEdit:false,
+        slideShow: false
+      };
+    }
+    else if (page === "slideEdit")
+    {
+      $scope.visible = {
+        homeActive: false,
+        aboutUsActive: false,
+        tioActive: false,
+        slideEdit:true,
+        slideShow: false
+      };
+    }
+    else if (page === "slideShow")
+    {
+      $scope.visible = {
+        homeActive: false,
+        aboutUsActive: false,
+        tioActive: false,
+        slideEdit:false,
+        slideShow: true
       };
     }
   };
