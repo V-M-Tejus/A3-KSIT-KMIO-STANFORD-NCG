@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Template</title>
-    <link rel = "stylesheet" src = "styles.css">
+    <link rel = "stylesheet" href = "styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="script.js"></script>
 </head>
@@ -15,11 +15,18 @@
     <div class="page-container">
         <!-- Header with navigation links -->
         <div class="page-header">
-            <img ng-click="navigate('home')" src="./Static/raghavaLogo.png" alt="Stanford Medicine" style="height: 50px;">
+            <img class="animatedLogo" ng-click="navigate('home')" src="./Static/raghavaLogo.png" alt="Stanford Medicine" style="height: 50px;">
             <div class="page-nav-links">
                 <a href="#" ng-click="navigate('home')">Home</a>
                 <a href="#" ng-click="navigate('about')">About the Initiative</a>
-                <a href="#" ng-click="navigate('tryItOut')">Try It Out</a>
+                <div class="dropdown">
+                <button class="dropbtn">Try it out</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                </div>
+            </div>
+                <a href="#" ng-click="navigate('slideShow')">Slide Show</a> <!--Added new link-->
             </div>
         </div>
 
