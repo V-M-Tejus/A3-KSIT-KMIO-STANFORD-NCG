@@ -15,11 +15,9 @@ body {
 .nxtSection {
     position: relative;
     border: 1px solid black;
-    margin: 0px;
     padding: 10px;
     min-height: 93vh;
     width: 90vw;
-    background-color: white;
     
 }
 
@@ -32,21 +30,10 @@ body {
     width: 200px;
 }
 
-.sectionBLeft {
-    background-color: #D0EFFF;
-    padding: 5px;
-}
-
-.sectionBRight {
-    background-color: #DFFFD6;
-    padding: 5px;
-}
-
 .sectionBCenter {
     display: flex;
     flex-direction: column;
-    margin: 0px;
-    background-color: #F0F0F0;
+    margin: 5px;
 }
 
 .title1 {
@@ -101,7 +88,6 @@ body {
 .parentSection {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    
 }
 
 .nxtSection {
@@ -116,7 +102,7 @@ body {
 .page-header {
     width:auto;
     background-color: #8c1c1c;
-    padding: 20px 40PX;
+    padding: 20px 40PX;;
     display: flex;
     justify-content: space-between;
     align-items: center;
