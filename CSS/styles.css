@@ -66,7 +66,7 @@ body {
 }
 
 .section-title {
-  background-color: #8c1c1c;
+  background-color: #496888;
   color: #fff;
   padding: 5px;
   font-weight: bold;
@@ -358,7 +358,7 @@ td {
 /* Header styles */
 .page-header {
   width: auto;
-  background-color: #8c1c1c;
+  background-color: #2c3e50;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
@@ -390,9 +390,9 @@ td {
 .animatedLogo {
   border-radius: 50%;
   outline: none;
-  border-color: #ff6767;
-  box-shadow: 0 0 10px #ff6767;
-  animation: fadeInAndMove 4s forwards;
+  border-color: #2980b9;
+  box-shadow: 0 0 10px #2980b9;
+  animation: fadeInAndMove 1s forwards;
 }
 .downBt{
   height: 40px; width: 40px;
@@ -412,4 +412,270 @@ td {
       opacity: 1;
       transform: translate(0, 0) scale(1.5);
   }
+}
+
+/* DropDown Styling */
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.content {
+    
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  background-color: #0000002d;
+  color: #fff; /* White text */
+  animation: fadeIn 2s forwards;
+  animation-delay: 1s;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; /* Light gray background */
+  color: #2c3e50; /* Dark blue-gray text color */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #2c3e50; /* Dark blue-gray */
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 0.5s;
+}
+
+.logo-container {
+  margin: 0 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 180px;
+}
+
+.logo-container p {
+  color: #ecf0f1; /* Light gray text color */
+  margin: 10px 0 0;
+}
+
+.content {
+  
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  background-color: #0000002d;
+  color: #fff; /* White text */
+  animation: fadeIn 2s forwards;
+  animation-delay: 1s;
+}
+
+.team-photos {
+  margin: 20px 0;
+  padding-bottom: 40px; /* Add padding to create space between photos and footer */
+}
+
+.team-photos .photos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 400px;
+}
+
+.team-photos img.team-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 10px;
+  border: 3px solid #2c3e50; /* Dark blue-gray border */
+  transition: transform 0.2s;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.team-photos img.team-photo:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.team-photos img.team-photo:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.team-photos img.team-photo:nth-child(3) {
+  animation-delay: 1.1s;
+}
+
+.team-photos img.team-photo:nth-child(4) {
+  animation-delay: 1.4s;
+}
+
+.team-photos img.team-photo:nth-child(5) {
+  animation-delay: 1.7s;
+}
+.team-photos img.team-photo:nth-child(6) {
+animation-delay: 2.0s;
+}
+.team-photos img.team-photo:nth-child(7) {
+animation-delay: 2.7s;
+}
+
+.team-photos h2 {
+  opacity: 0;
+  animation: fadeIn 1.3s forwards;
+  animation-delay: 0.6s;
+  color: #2980b9; /* Darker blue */
+}
+
+/* Footer Styling */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #2c3e50; /* Dark blue-gray */
+  color: #ecf0f1; /* Light gray text */
+  padding: 20px 0;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 2s;
+  margin-top: auto;
+}
+
+.footer-section {
+  max-width: 200px;
+  margin: 0 20px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  color: #ecf0f1; /* Light gray text */
+}
+
+.footer-section p, .footer-section a {
+  color: #ecf0f1; /* Light gray text */
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
+}
+
+/* Fade-in class for text elements */
+.fade-in-header {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 0.5s;
+}
+
+.fade-in-content {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 1s;
+}
+
+.fade-in-photos {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 1.5s;
+}
+
+.fade-in-footer {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 2s;
+}
+
+.home {
+display: flex;
+flex-direction: column;
+background-image: url(../Static/hospitalBG.jpeg);
+
+}
+
+/* Logo Animation */
+
+.animatedLogo {
+border-radius: 50%;
+outline: none;
+border-color: #2980b9;
+box-shadow: 0 0 10px #2980b9;
+animation: fadeInAndMove 4s forwards;
+}
+
+.ksit-logo, .kidwai-logo {
+height: 100px;
+}
+
+@keyframes fadeInAndMove {
+0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(4);
+}
+50% {
+    opacity: 1;
+    transform: translate(0, 0) scale(4);
+}
+100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1.5);
+}
+}
+
+
+.meet {
+display: inline-block;
+box-shadow: 0 0 20px #00000023;
+padding-left: 20px;
+padding-right: 20px;
+border-radius: 10px;
+backdrop-filter: blur(10px);
+background-color: #00000041;
+margin-bottom: 20px;
+}
+
+.flexKarnaHai {
+  display: flex;
 }

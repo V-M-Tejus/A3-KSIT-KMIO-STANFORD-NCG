@@ -16,21 +16,65 @@
     <div class="page-container">
         <!-- Header with navigation links -->
         <div class="page-header">
-            <img class="animatedLogo" ng-click="navigate('home')" src="./Static/RaghavaLogo.png" alt="Stanford Medicine">
+            <img class="animatedLogo" ng-click="navigate('home')" src="./Static/raghavaLogo.png" alt="Stanford Medicine" style="height: 50px;">
             <div class="page-nav-links">
                 <a href="#" ng-click="navigate('home')">Home</a>
                 <a href="#" ng-click="navigate('about')">About the Initiative</a>
-                <a href="#" ng-click="navigate('tryItOut')">Try It Out</a>
+                <div class="dropdown">
+                <button class="dropbtn">Try it out</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                </div>
+            </div>
+                <a href="#" ng-click="navigate('slideShow')">Slide Show</a> <!--Added new link-->
             </div>
         </div>
 
         <!-- Home page -->
         <div ng-show="visible.homeActive" class="home">
             <div class="title"></div>
-            <div class="section">
-                <div class="section-title">Welcome to Our Project</div>
-                <p>This is the home page of our initiative. Here you can find information about our goals and progress.</p>
+            
+            <div class="content fade-in-content">
+                <div class="para">
+                <h1>Welcome to Our Project Home Page</h1>
+                <p>Our project aims to ease the life of doctors by providing them with tools to create presentations and posters without the need to learn complex technology.</p>
             </div>
+            </div>
+            <div class="team-photos fade-in-photos">
+                <div class="meet"><h2 style="color: white;">Meet Our Team</h2></div>
+                <div class="photos">
+                    <img src="./Static/avinash.png" alt="Team Member Avinash" class="team-photo">
+                    <img src="./static/mentor.jpg" alt="Mentor Krishna Gudi" class="team-photo">
+        
+                    <img src="./Static/Rakshita.jpg" alt="Team Member Rakshita" class="team-photo">
+                    <img src="./Static/" alt="Team memeber skanda" class="team-photo">
+                    <img src="./Static/soujanya.jpeg" alt="Team memeber soujanaya" class="team-photo">
+                    <img src="./Static/vaishali.jpg" alt="Team Member Vaishali" class="team-photo">
+
+                    <img src="./Static/Tejus.jpeg" alt="Team Member Tejus" class="team-photo">
+                   
+                </div>
+            </div>
+            <footer class="footer fade-in-footer">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We are a team of dedicated students and faculty from KSIT, working on innovative solutions to improve the lives of healthcare professionals.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@ksit.ac.in</p>
+                    <p>Phone: +91 12345 67890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Feedback</h3>
+                    <p>Your feedback is valuable to us. Please <a href="feedback.html">click here</a> to provide your feedback.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>KSIT Website</h3>
+                    <p><a href="https://www.ksit.ac.in" target="_blank">Visit KSIT Website</a></p>
+                </div>
+            </footer>
         </div>
 
         <!-- About page -->
@@ -40,6 +84,25 @@
                 <div class="section-title">Our Mission</div>
                 <p>This initiative aims to improve healthcare through innovative solutions and research. Our team is dedicated to achieving measurable outcomes that benefit patients and medical professionals.</p>
             </div>
+            <footer class="footer fade-in-footer">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We are a team of dedicated students and faculty from KSIT, working on innovative solutions to improve the lives of healthcare professionals.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@ksit.ac.in</p>
+                    <p>Phone: +91 12345 67890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Feedback</h3>
+                    <p>Your feedback is valuable to us. Please <a href="feedback.html">click here</a> to provide your feedback.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>KSIT Website</h3>
+                    <p><a href="https://www.ksit.ac.in" target="_blank">Visit KSIT Website</a></p>
+                </div>
+            </footer>
         </div>
 
 
@@ -101,7 +164,7 @@
                                 </span>
                             </div>
                             <div class="graph-flex">
-                                <div ng-repeat="graph in graphs | limitTo: 2">
+                                <div class="flexKarnaHai" ng-repeat="graph in graphs | limitTo: 2">
                                     <image-uploader id="{{graph.id}}" default-src="{{graph.defaultSrc}}" alt-text="{{graph.altText}}"></image-uploader>
                                 </div>
                             </div>
@@ -110,7 +173,7 @@
                         <div class="section">
                         <div class="section-title">Analysis</div>
                         <div class="analysis-flex">
-                            <div ng-repeat="graph in graphs.slice(2)">
+                            <div class="flexKarnaHai" ng-repeat="graph in graphs.slice(2)">
                                 <image-uploader id="{{graph.id}}" default-src="{{graph.defaultSrc}}" alt-text="{{graph.altText}}"></image-uploader>
                             </div>
                         </div>
@@ -309,7 +372,8 @@
                 <img class="downBt" src="./Static/downloadButton.png" ng-click="downloadPDF()" alt="Click to Download" >
                 <h1>When you click Download all the buttons will be hidden for download</h1> 
             </div>
-
+            
+        </div>
     </body>
 
 </html>
