@@ -111,7 +111,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* page header */
+/ page header /
 
 .page-header {
     width:auto;
@@ -157,7 +157,7 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-/* Page 2 */
+/ Page 2 /
 
 .container2 {
     display: flex;
@@ -168,4 +168,3 @@ body {
     font-size: 20px;
     font-weight: bold;
 }
-
