@@ -382,6 +382,9 @@ td {
   box-shadow: 0 0 10px #ff6767;
   animation: fadeInAndMove 4s forwards;
 }
+.downBt{
+  height: 40px; width: 40px;
+}
 
 
 @keyframes fadeInAndMove {
