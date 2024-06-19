@@ -321,13 +321,31 @@ td {
   position: relative;
 }
 
-.graph-main {
+
+.imageContainer{
+  width: 379.25px;
+  height: 220px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.graph2 {
-  position: absolute;
-  right: 4px;
+
+#uploadedImage{
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.error-popup {
+  display: none;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
 .instruction-flexbar {
@@ -335,12 +353,6 @@ td {
   border: 1px solid black;
   padding: 5px;
   align-self: flex-end;
-}
-
-.run-chart,
-.flow-chart {
-  height: 220px;
-  width: 220px;
 }
 
 /* Header styles */

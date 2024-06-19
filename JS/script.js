@@ -1,9 +1,40 @@
 var app = angular.module("myApp", []);
 app.controller("myCtrl", function ($scope) {
-  //Key driver functions
-  //$scope.keyVar = [{ name: 'Enter max of 94 Characters' }];
+  //Script for Image generation
+/*
+  $scope.uploadedImageSrc = '';
 
-  //$scope.intVar = [{ name: 'Enter max of 94 Caracters' }];
+  $scope.openFilePicker = function() {
+      document.getElementById('imageInput').click();
+  };
+
+  $scope.fileChanged = function(event) {
+      var file = event.target.files[0];
+      if (file) {
+          var img = new Image();
+          img.onload = function() {
+              $scope.$apply(function() {
+                  $scope.uploadedImageSrc = img.src;
+                  document.getElementById('run-chart').style.display = 'none';
+                  document.getElementById('uploadedImage').style.display = 'block';
+              });
+          };
+          img.src = URL.createObjectURL(file);
+      } else {
+          document.getElementById('errorPopup').style.display = 'block';
+          setTimeout(function() {
+              document.getElementById('errorPopup').style.display = 'none';
+          }, 3000);
+      }
+  };
+
+
+
+*/
+
+
+
+  //initialization of certain things
 
   $scope.keyVar = [{ name: "Item 1" }, { name: "Item 2" }, { name: "Item 3" }];
   $scope.intVar = [{ name: "Item A" }, { name: "Item B" }, { name: "Item C" }];
@@ -231,5 +262,66 @@ app.controller("myCtrl", function ($scope) {
   $scope.downloadPDF = function () {
     //Here all Buttons will be hided and then we will get to see the downloaded pdf
     $scope.showButtons = false;
+  };
+
+
+  $scope.graphs = [
+    { id: 1, defaultSrc: "./Static/Screenshot 2024-06-02 151729.png", altText: "Run Chart" },
+    { id: 2, defaultSrc: "./Static/1.png", altText: "Flow Chart" },
+    { id: 3, defaultSrc: "./Static/2.png", altText: "Another Chart" },
+    { id: 4, defaultSrc: "./Static/3.png", altText: "Fourth Chart" }
+];
+
+});
+
+
+
+
+
+app.directive('imageUploader', function() {
+  return {
+      restrict: 'E',
+      scope: {
+          id: '@',
+          defaultSrc: '@',
+          altText: '@'
+      },
+      template: `
+          <div class="graph" ng-click="openFilePicker()">
+              <div class="imageContainer">
+                  <img id="uploadedImage{{id}}" ng-src="{{uploadedImageSrc}}" alt="{{altText}}">
+                  <input type="file" id="imageInput{{id}}" style="display:none" accept="image/*" onchange="angular.element(this).scope().fileChanged(event)">
+                  <img class="run-chart" id="run-chart{{id}}" ng-src="{{defaultSrc}}" alt="{{altText}}">   
+              </div>
+              <div class="error-popup" id="errorPopup{{id}}">Error: Invalid file</div>
+          </div>
+      `,
+      controller: function($scope) {
+          $scope.uploadedImageSrc = '';
+
+          $scope.openFilePicker = function() {
+              document.getElementById('imageInput' + $scope.id).click();
+          };
+
+          $scope.fileChanged = function(event) {
+              var file = event.target.files[0];
+              if (file) {
+                  var img = new Image();
+                  img.onload = function() {
+                      $scope.$apply(function() {
+                          $scope.uploadedImageSrc = img.src;
+                          document.getElementById('run-chart' + $scope.id).style.display = 'none';
+                          document.getElementById('uploadedImage' + $scope.id).style.display = 'block';
+                      });
+                  };
+                  img.src = URL.createObjectURL(file);
+              } else {
+                  document.getElementById('errorPopup' + $scope.id).style.display = 'block';
+                  setTimeout(function() {
+                      document.getElementById('errorPopup' + $scope.id).style.display = 'none';
+                  }, 3000);
+              }
+          };
+      }
   };
 });

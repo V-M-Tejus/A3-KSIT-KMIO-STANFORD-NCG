@@ -101,17 +101,19 @@
                                 </span>
                             </div>
                             <div class="graph-flex">
-                            <div class="graph-main">
-                                <div class="graph1"><img class="run-chart" src="./Static/Screenshot 2024-06-02 151729.png" alt=""></div>
-        
-                                <div class="graph2"><img class="flow-chart" src="./Static/1.png" alt=""></div>
-                            </div>
+                                <div ng-repeat="graph in graphs | limitTo: 2">
+                                    <image-uploader id="{{graph.id}}" default-src="{{graph.defaultSrc}}" alt-text="{{graph.altText}}"></image-uploader>
+                                </div>
                             </div>
                         </div>
                         </div>
                         <div class="section">
-                            <div class="section-title">Analysis</div>
-        
+                        <div class="section-title">Analysis</div>
+                        <div class="analysis-flex">
+                            <div ng-repeat="graph in graphs.slice(2)">
+                                <image-uploader id="{{graph.id}}" default-src="{{graph.defaultSrc}}" alt-text="{{graph.altText}}"></image-uploader>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     <div class="right-column">
