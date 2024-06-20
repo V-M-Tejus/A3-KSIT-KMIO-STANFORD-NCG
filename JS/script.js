@@ -60,52 +60,52 @@ app.controller("myCtrl", function ($scope) {
   ];
 
   $scope.showButtons = true;
-  $scope.visible = { homeActive: true, aboutUsActive: false, tioActive: false };
+  $scope.visible = { homeActive: true, abouInitActive: false, tioActive: false ,slideShowActive: false,slideEditActive: false};
 
   $scope.navigate = function (page) {
     if (page === "home") {
       $scope.visible = {
         homeActive: true,
-        aboutUsActive: false,
+        aboutInitActive: false,
         tioActive: false,
-        slideEdit:false,
-        slideShow: false
+        slideEditActive:false,
+        slideShowActive: false
       };
     } else if (page === "about") {
       $scope.visible = {
         homeActive: false,
-        aboutUsActive: true,
+        aboutInitActive: true,
         tioActive: false,
-        slideEdit: false,
-        slideShow: false
+        slideEditActive: false,
+        slideShowActive: false
       };
     } else if (page === "tryItOut") {
       $scope.visible = {
         homeActive: false,
-        aboutUsActive: false,
+        aboutInitActive: false,
         tioActive: true,
-        slideEdit:false,
-        slideShow: false
+        slideEditActive:false,
+        slideShowActive: false
       };
     }
     else if (page === "slideEdit")
     {
       $scope.visible = {
         homeActive: false,
-        aboutUsActive: false,
+        aboutInitActive: false,
         tioActive: false,
-        slideEdit:true,
-        slideShow: false
+        slideEditActive:true,
+        slideShowActive: false
       };
     }
     else if (page === "slideShow")
     {
       $scope.visible = {
         homeActive: false,
-        aboutUsActive: false,
+        aboutInitActive: false,
         tioActive: false,
-        slideEdit:false,
-        slideShow: true
+        slideEditActive:false,
+        slideShowActive: true
       };
     }
   };

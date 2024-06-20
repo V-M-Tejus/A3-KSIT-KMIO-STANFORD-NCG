@@ -7,373 +7,387 @@
     <title>Project Template</title>
     <link rel = "stylesheet" href = "./CSS/styles.css">
    
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="./Static/generalAJS.js"></script>
     <script src="./JS/script.js"></script>
 </head>
 
 <body>
     <!-- Main container -->
-    <div class="page-container">
-        <!-- Header with navigation links -->
-        <div class="page-header">
-            <img class="animatedLogo" ng-click="navigate('home')" src="./Static/raghavaLogo.png" alt="Stanford Medicine" style="height: 50px;">
-            <div class="page-nav-links">
-                <a href="#" ng-click="navigate('home')">Home</a>
-                <a href="#" ng-click="navigate('about')">About the Initiative</a>
-                <div class="dropdown">
-                <button class="dropbtn">Try it out</button>
-                <div class="dropdown-content">
-                    <a href="#" ng-click="navigate('tryItOut')">Link 1</a>
-                    <a href="#" ng-click="navigate('slideEdit')">Link 2</a>
-                </div>
-            </div>
-                <a href="#" ng-click="navigate('slideShow')">Slide Show</a> <!--Added new link-->
-            </div>
-        </div>
-
-        <!-- Home page -->
-        <div ng-show="visible.homeActive" class="home">
-            <div class="title"></div>
-            
-            <div class="content fade-in-content">
-                <div class="para">
-                <h1>Welcome to Our Project Home Page</h1>
-                <p>Our project aims to ease the life of doctors by providing them with tools to create presentations and posters without the need to learn complex technology.</p>
-            </div>
-            </div>
-            <div class="team-photos fade-in-photos">
-                <div class="meet"><h2 style="color: white;">Meet Our Team</h2></div>
-                <div class="photos">
-                    <img src="./Static/avinash.png" alt="Team Member Avinash" class="team-photo">
-                    <img src="./static/mentor.jpg" alt="Mentor Krishna Gudi" class="team-photo">
-        
-                    <img src="./Static/Rakshita.jpg" alt="Team Member Rakshita" class="team-photo">
-                    <img src="./Static/" alt="Team memeber skanda" class="team-photo">
-                    <img src="./Static/soujanya.jpeg" alt="Team memeber soujanaya" class="team-photo">
-                    <img src="./Static/vaishali.jpg" alt="Team Member Vaishali" class="team-photo">
-
-                    <img src="./Static/Tejus.jpeg" alt="Team Member Tejus" class="team-photo">
-                   
-                </div>
-            </div>
-            <footer class="footer fade-in-footer">
-                <div class="footer-section">
-                    <h3>About Us</h3>
-                    <p>We are a team of dedicated students and faculty from KSIT, working on innovative solutions to improve the lives of healthcare professionals.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>Email: contact@ksit.ac.in</p>
-                    <p>Phone: +91 12345 67890</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Feedback</h3>
-                    <p>Your feedback is valuable to us. Please <a href="feedback.html">click here</a> to provide your feedback.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>KSIT Website</h3>
-                    <p><a href="https://www.ksit.ac.in" target="_blank">Visit KSIT Website</a></p>
-                </div>
-            </footer>
-        </div>
-
-        <!-- About page -->
-        <div ng-show="visible.aboutUsActive" class="about">
-            <div class="title"></div>
-            <div class="section">
-                <div class="section-title">Our Mission</div>
-                <p>This initiative aims to improve healthcare through innovative solutions and research. Our team is dedicated to achieving measurable outcomes that benefit patients and medical professionals.</p>
-            </div>
-            <footer class="footer fade-in-footer">
-                <div class="footer-section">
-                    <h3>About Us</h3>
-                    <p>We are a team of dedicated students and faculty from KSIT, working on innovative solutions to improve the lives of healthcare professionals.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>Email: contact@ksit.ac.in</p>
-                    <p>Phone: +91 12345 67890</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Feedback</h3>
-                    <p>Your feedback is valuable to us. Please <a href="feedback.html">click here</a> to provide your feedback.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>KSIT Website</h3>
-                    <p><a href="https://www.ksit.ac.in" target="_blank">Visit KSIT Website</a></p>
-                </div>
-            </footer>
-        </div>
-
-
-        <!-- Try It Out page (existing content) -->
-        <div ng-show="visible.tioActive" class="try-it-out">
-            <div class="title"></div>
-            <div class="section">
-                <div class="section-title">Try it out</div>
-            </div>
-            <!-- Existing content here -->
-            <div class="container">
-                <div class="header">
-                   <div class="stanford-logo"><img src = "./Static/Stanford_Logo.svg" alt="Stanford Medicine" style="height: 110px;"></div>
-                    <div class="personal-logo"><img style="height: 100px;" src = "./Static/Kidwai_Memorial_Institute_of_Oncology_Logo.svg.png"></div>
-                    <div class="ncg-logo"><img src="./Static/NationalCancerGrid.png" alt="National Cancer Grid" style="height: 110px;"></div>
-                </div>
-                <div class="title" ng-repeat="i in projectTitle">
-                <span ng-click="editKey(i)">{{i.name}}</span>
-                    <span ng-show="i.editing">
-                        <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
-                    </span>
-                </div>
-                <div class="main-content">
-                    <div class="left-column">
-                        <div class="section">
-                            <div class="section-title">Problem Statement</div>
-                            <div class="input-ps" ng-repeat="i in problemStatement">
-                                <span ng-click="editKey(i)">{{i.name}}</span>
-                                <span ng-show="i.editing">
-                                    <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
-                                </span>
-                            </div>
-                        </div>
-                        <div class="section">
-                            <div class="section-title">Background</div>
-                            <div class="input-ng" ng-repeat="i in background">
-                                <span ng-click="editKey(i)">{{i.name}}</span>
-                                <span ng-show="i.editing">
-                                    <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
-                                </span>
-                            </div>
-                        </div>
-                        <div class="section">
-                            <div class="section-title">Target State: SMART Goal</div>
-                            <div class="input-ts" ng-repeat="i in targetState">
-                                <span ng-click="editKey(i)">{{i.name}}</span>
-                                <span ng-show="i.editing">
-                                    <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
-                                </span>
-                            </div>
-                        </div>
-                        <div class="section">
-                            <div class="section-title">Current State: Identify Target / Actual / Gap</div>
-                            <div class="cs-main">
-                            <div class = "cs-text" ng-repeat="i in currentState">
-                                <span ng-click="editKey(i)">{{i.name}}</span>
-                                <span ng-show="i.editing">
-                                    <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
-                                </span>
-                            </div>
-                            <div class="graph-flex">
-                                <div class="flexKarnaHai" ng-repeat="graph in graphs | limitTo: 2">
-                                    <image-uploader id="{{graph.id}}" default-src="{{graph.defaultSrc}}" alt-text="{{graph.altText}}"></image-uploader>
+                    <div class="page-container">
+                            <!-- Header with navigation links -->
+                            <div class="page-header">
+                                <img class="animatedLogo" ng-click="navigate('home')" src="./Static/raghavaLogo.png" alt="Stanford Medicine" style="height: 50px;">
+                                <div class="page-nav-links">
+                                    <a href="#" ng-click="navigate('home')">Home</a>
+                                    <a href="#" ng-click="navigate('about')">About the Initiative</a>
+                                    <div class="dropdown">
+                                    <button class="dropbtn">Try it out</button>
+                                    <div class="dropdown-content">
+                                        <a href="#" ng-click="navigate('tryItOut')">A-3 Poster Editor</a>
+                                        <a href="#" ng-click="navigate('slideEdit')">Presentation Editor</a>
+                                    </div>
+                                </div>
+                                    <a href="#" ng-click="navigate('slideShow')">Slide Show</a> <!--Added new link-->
                                 </div>
                             </div>
-                        </div>
-                        </div>
-                        <div class="section">
-                        <div class="section-title">Analysis</div>
-                        <div class="analysis-flex">
-                            <div class="flexKarnaHai" ng-repeat="graph in graphs.slice(2)">
-                                <image-uploader id="{{graph.id}}" default-src="{{graph.defaultSrc}}" alt-text="{{graph.altText}}"></image-uploader>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="right-column">
-        
-        
-        
-                        <div class="topflex">
-        
-        
-        
-        
-                            <div class="section key-drivers">
-                                <div class="section-title">Key Drivers</div>
-                                <table id="keyDrivers" class="key-driver">
-                                    <tr ng-repeat="k in keyVar">
-                                        <td>
-                                            <span ng-click="editKey(k)">{{k.name}}</span>
-                                            <span ng-show="k.editing">
-                                                <input class="delete-main" type="text" ng-model="k.name" ng-blur="saveKey(k,'key')">
-                                            </span>
-                                            <span ng-show="!k.editing">
-                                                <img class="delete-btn" ng-show="showButtons" src="./Static/Delete_icon.svg" ng-click="deleteKey($index,'key')"></img>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <img ng-show="showButtons" src="./Static/addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addEmptyKey('key')"></img>
-                            </div>
-        
-        
-                            <svg id="arrowSvg" width="100%" height="100%">
-                                <defs>
-                                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-                                        <polygon points="0 0, 10 3.5, 0 7" />
-                                    </marker>
-                                </defs>
-                                <g ng-repeat="path in arrows" >
-                                    <path class="arrow" ng-attr-d="{{path.path}}" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
-                                </g>
-                            </svg>
-                            
-        
-        
-        
-                            <div class="section interventions">
-                                <div class="section-title">Interventions / Countermeasures</div>
-                                <table id="myTable" class="my-table">
-                                    <tr ng-repeat="k in intVar">
-                                        <td>
-                                            <span ng-click="editKey(k)">{{k.name}}</span>
-                                            <span ng-show="k.editing">
-                                                <input class="delete-interv" type="text" ng-model="k.name" ng-blur="saveKey(k,'intervention')">
-                                            </span>
-                                            <span ng-show="!k.editing">
-                                                <img class="delete-btn2" ng-show="showButtons" src="./Static/Delete_icon.svg" ng-click="deleteKey($index,'intervention')"></img>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <img ng-show="showButtons" src="./Static/addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addEmptyKey('intervention')"></img>
-                            </div>
-                            
-                            </div>
-                            <img ng-show="showButtons" style="height: 35px; width: 35px; align-self: center;" src="./Static/addArrowsIcon.png" alt="Add Arrows" ng-click="arrowEditingStart()">
-        
-        
-        
-        
-                            <span ng-show="showButtons">
-                                <div ng-show="arrowEdit"> 
-                                    <div class="arrow-main">
-                                        <select class="select-arrow" ng-model="arrow.selectedKey" name="oKey" id="oKey">
-                                            <optgroup label="Key Drivers">
-                                                <option ng-repeat="oK in keyVar" value="{{oK.name}}">{{oK.name}}</option>
-                                            </optgroup>
-                                        </select>
-                                        <select class="select-arrow" ng-model="arrow.selectedInt" name="oInt" id="oInt">
-                                            <optgroup label="Interventions">
-                                                <option ng-repeat="oI in intVar" value="{{oI.name}}">{{oI.name}}</option>
-                                            </optgroup>
-                                        </select> 
-                                        <img class="add-arrow-btn" ng-click="arrowGenerate(arrow.selectedKey, arrow.selectedInt)" src="./Static/submitArrowLogo.png" alt="Submit">
-                                    </div>
+
+                                <!-- Home page -->
+                                <div ng-show="visible.homeActive" class="home">
+                                    <div class="title"></div>
                                     
-                                
-                                    <table class="arrow-table" border = "1">
-                                    <tr>
-                                        <th>LHS</th>
-                                        <th>RHS</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    <tr ng-repeat="arrow in arrows">
-                                        <td>
-                                            <span ng-show="!arrow.editing">{{arrow.lhs}}</span>
-                                            <input ng-show="arrow.editing" type="text" ng-model="arrow.lhs" ng-blur="saveArrow(arrow)">
-                                        </td>
-                                        <td>
-                                            <span ng-show="!arrow.editing">{{arrow.rhs}}</span>
-                                            <input ng-show="arrow.editing" type="text" ng-model="arrow.rhs" ng-blur="saveArrow(arrow)">
-                                        </td>
-                                        <td>
-                                            <button ng-click="editArrow(arrow)">Edit</button>
-                                            <button ng-click="deleteArrow($index)">Delete</button>
-                                        </td>
-                                    </tr>
-                                    </table>
-        
-                                    <img src="./Static/doneAddingArrows.png" style="align-self: centre ;" alt="Done with adding Arrows" ng-click="arrowEditingEnd()">
-                            </div> 
-                                
-                            </span>
-                       
-        
-        
-        
-                        <div class="sustain-plan section">
-                            <div class="section-title">Sustain Plan</div>
-                            <table>
-                                <tr>
-                                    <th>Activity to sustain</th>
-                                    <th>Owner</th>
-                                    <th>Sustain method and frequency</th>
-                                    <th>Report to</th>
-                                </tr>
-                                <tr ng-repeat="i in sustainPlan">
-                                    <div>
-                                        <th ng-click="editSustainPlan(i,'activity')">
-                                            {{i.activity.name}}
-                                            <span ng-show="i.activity.editing">
-                                                <input type="text"  ng-model="i.activity.name" ng-blur="saveSustainPlan(i,'activity')">
-                                            </span>
-                                        </th>
-                                        <th ng-click="editSustainPlan(i,'owner')">
-                                            {{i.owner.name}}
-                                            <span ng-show="i.owner.editing">
-                                                <input type="text"  ng-model="i.owner.name" ng-blur="saveSustainPlan(i,'owner')">
-                                            </span>
-                                        </th>
-                                        <th ng-click="editSustainPlan(i, 'sustainMethod')">
-                                            {{i.sustainMethod.name}}
-                                            <span ng-show="i.sustainMethod.editing">
-                                                <input type="text"  ng-model="i.sustainMethod.name" ng-blur="saveSustainPlan(i,'sustainMethod')">
-                                            </span>
-                                        </th>
-                                        <th class="delete-reportTo-main" ng-click="editSustainPlan(i, 'reportTo')">
-                                            {{i.reportTo.name}}
-                                            <span ng-show="i.reportTo.editing">
-                                                <input type="text"  ng-model="i.reportTo.name" ng-blur="saveSustainPlan(i,'reportTo')">
-                                            </span>
-                                            <span ng-show="!i.activity.editing && !i.owner.editing && !i.sustainMethod.editing && !i.reportTo.editing">
-                                                <img class="delete-reportTo" ng-show="showButtons" src = "./Static/Delete_icon.svg" ng-click = "deleteSustainPlan(i)" ></img>
-                                            </span>
-                                        </th>
+                                    <div class="content fade-in-content">
+                                        <div class="para">
+                                        <h1>Welcome to Our Project Home Page</h1>
+                                        <p>Our project aims to ease the life of doctors by providing them with tools to create presentations and posters without the need to learn complex technology.</p>
                                     </div>
-                                </tr>
-                            </table>
-                        </div>
-                            <img ng-show="showButtons" src="./Static/addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addSustainPlan()"></img>
-                            
-                            <div class="instruction-flexbar">
-                                <div class="reliability-level">
-                                    <p>Reliability Level:</p>
-                                    <ol>
-                                        <li>Individuals: Feedback, checklists, training, basic standards</li>
-                                        <li>Procedures: Embedded standard work, reminders, constraints</li>
-                                        <li>Systems: Process design, fail safes, physical layout, built-in feedback, automated
-                                            systems, concentration of responsibility</li>
-                                    </ol>
+                                    </div>
+                                    <div class="team-photos fade-in-photos">
+                                        <div class="meet"><h2 style="color: white;">Meet Our Team</h2></div>
+                                        <div class="photos">
+                                            <img src="./Static/avinash.png" alt="Team Member Avinash" class="team-photo">
+                                            <img src="./static/mentor.jpg" alt="Mentor Krishna Gudi" class="team-photo">
+                                
+                                            <img src="./Static/Rakshita.jpg" alt="Team Member Rakshita" class="team-photo">
+                                            <img src="./Static/" alt="Team memeber skanda" class="team-photo">
+                                            <img src="./Static/soujanya.jpeg" alt="Team memeber soujanaya" class="team-photo">
+                                            <img src="./Static/vaishali.jpg" alt="Team Member Vaishali" class="team-photo">
+
+                                            <img src="./Static/Tejus.jpeg" alt="Team Member Tejus" class="team-photo">
+                                        
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p>Maturity Bars:</p>
-                                    <ul>
-                                        <li>0: Untested idea </li>
-                                        <li>1: Early test / PDCA </li>
-                                        <li>2: Multiple PDCAs </li>
-                                        <li>3: Early implementation </li>
-                                        <li>4: Working well in operation </li>
-                                    </ul>
-                           
+                                <!--End of Home Page-->
+
+                                <!-- About the Initiative page -->
+                                <div ng-show="visible.aboutInitActive" class="about-init">
+                                    <div class="title"></div>
+                                    <div class="section">
+                                        <div class="section-title">Our Mission</div>
+                                        <p>This initiative aims to improve healthcare through innovative solutions and research. Our team is dedicated to achieving measurable outcomes that benefit patients and medical professionals.</p>
+                                    </div>
                                 </div>
-                                <div class="maturity-bars">
-                                    <progress class="bar" id="file" value="0" max="100"> 32% </progress><br>
-                                    <progress id="file" class="bar" value="25" max="100"> 32% </progress><br>
-                                    <progress id="file" class="bar" value="50" max="100"> 32% </progress><br>
-                                    <progress id="file" class="bar" value="75" max="100"> 32% </progress><br>
-                                    <progress id="file" class="bar" value="100" max="100"> 32% </progress>
+                                <!--End of About Initiative Page-->
+
+
+                                <!-- Try It Out page-->
+                                <div ng-show="visible.tioActive" class="try-it-out">
+                                    <div class="title"></div>
+                                    <div class="section">
+                                        <div class="section-title">Try it out</div>
+                                    </div>
+                                    <!-- Existing content here -->
+                                    <div class="container">
+                                        <div class="header">
+                                        <div class="stanford-logo"><img src = "./Static/Stanford_Logo.svg" alt="Stanford Medicine" style="height: 110px;"></div>
+                                            <div class="personal-logo"><img style="height: 100px;" src = "./Static/Kidwai_Memorial_Institute_of_Oncology_Logo.svg.png"></div>
+                                            <div class="ncg-logo"><img src="./Static/NationalCancerGrid.png" alt="National Cancer Grid" style="height: 110px;"></div>
+                                        </div>
+                                        <div class="title" ng-repeat="i in projectTitle">
+                                        <span ng-click="editKey(i)">{{i.name}}</span>
+                                            <span ng-show="i.editing">
+                                                <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
+                                            </span>
+                                        </div>
+                                        <div class="main-content">
+                                            <div class="left-column">
+                                                <div class="section">
+                                                    <div class="section-title">Problem Statement</div>
+                                                    <div class="input-ps" ng-repeat="i in problemStatement">
+                                                        <span ng-click="editKey(i)">{{i.name}}</span>
+                                                        <span ng-show="i.editing">
+                                                            <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="section">
+                                                    <div class="section-title">Background</div>
+                                                    <div class="input-ng" ng-repeat="i in background">
+                                                        <span ng-click="editKey(i)">{{i.name}}</span>
+                                                        <span ng-show="i.editing">
+                                                            <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="section">
+                                                    <div class="section-title">Target State: SMART Goal</div>
+                                                    <div class="input-ts" ng-repeat="i in targetState">
+                                                        <span ng-click="editKey(i)">{{i.name}}</span>
+                                                        <span ng-show="i.editing">
+                                                            <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="section">
+                                                    <div class="section-title">Current State: Identify Target / Actual / Gap</div>
+                                                    <div class="cs-main">
+                                                    <div class = "cs-text" ng-repeat="i in currentState">
+                                                        <span ng-click="editKey(i)">{{i.name}}</span>
+                                                        <span ng-show="i.editing">
+                                                            <input type="text" placeholder="Enter max 305 characters" ng-model="i.name" ng-blur="saveKey(i)">
+                                                        </span>
+                                                    </div>
+                                                    <div class="graph-flex">
+                                                        <div class="flexKarnaHai" ng-repeat="graph in graphs | limitTo: 2">
+                                                            <image-uploader id="{{graph.id}}" default-src="{{graph.defaultSrc}}" alt-text="{{graph.altText}}"></image-uploader>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <div class="section">
+                                                <div class="section-title">Analysis</div>
+                                                <div class="analysis-flex">
+                                                    <div class="flexKarnaHai" ng-repeat="graph in graphs.slice(2)">
+                                                        <image-uploader id="{{graph.id}}" default-src="{{graph.defaultSrc}}" alt-text="{{graph.altText}}"></image-uploader>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="right-column">
+                                
+                                
+                                
+                                                <div class="topflex">
+                                
+                                
+                                
+                                
+                                                    <div class="section key-drivers">
+                                                        <div class="section-title">Key Drivers</div>
+                                                        <table id="keyDrivers" class="key-driver">
+                                                            <tr ng-repeat="k in keyVar">
+                                                                <td>
+                                                                    <span ng-click="editKey(k)">{{k.name}}</span>
+                                                                    <span ng-show="k.editing">
+                                                                        <input class="delete-main" type="text" ng-model="k.name" ng-blur="saveKey(k,'key')">
+                                                                    </span>
+                                                                    <span ng-show="!k.editing">
+                                                                        <img class="delete-btn" ng-show="showButtons" src="./Static/Delete_icon.svg" ng-click="deleteKey($index,'key')"></img>
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <img ng-show="showButtons" src="./Static/addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addEmptyKey('key')"></img>
+                                                    </div>
+                                
+                                
+                                                    <svg id="arrowSvg" width="100%" height="100%">
+                                                        <defs>
+                                                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                                                <polygon points="0 0, 10 3.5, 0 7" />
+                                                            </marker>
+                                                        </defs>
+                                                        <g ng-repeat="path in arrows" >
+                                                            <path class="arrow" ng-attr-d="{{path.path}}" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+                                                        </g>
+                                                    </svg>
+                                                    
+                                
+                                
+                                
+                                                    <div class="section interventions">
+                                                        <div class="section-title">Interventions / Countermeasures</div>
+                                                        <table id="myTable" class="my-table">
+                                                            <tr ng-repeat="k in intVar">
+                                                                <td>
+                                                                    <span ng-click="editKey(k)">{{k.name}}</span>
+                                                                    <span ng-show="k.editing">
+                                                                        <input class="delete-interv" type="text" ng-model="k.name" ng-blur="saveKey(k,'intervention')">
+                                                                    </span>
+                                                                    <span ng-show="!k.editing">
+                                                                        <img class="delete-btn2" ng-show="showButtons" src="./Static/Delete_icon.svg" ng-click="deleteKey($index,'intervention')"></img>
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <img ng-show="showButtons" src="./Static/addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addEmptyKey('intervention')"></img>
+                                                    </div>
+                                                    
+                                                    </div>
+                                                    <img ng-show="showButtons" style="height: 35px; width: 35px; align-self: center;" src="./Static/addArrowsIcon.png" alt="Add Arrows" ng-click="arrowEditingStart()">
+                                
+                                
+                                
+                                
+                                                    <span ng-show="showButtons">
+                                                        <div ng-show="arrowEdit"> 
+                                                            <div class="arrow-main">
+                                                                <select class="select-arrow" ng-model="arrow.selectedKey" name="oKey" id="oKey">
+                                                                    <optgroup label="Key Drivers">
+                                                                        <option ng-repeat="oK in keyVar" value="{{oK.name}}">{{oK.name}}</option>
+                                                                    </optgroup>
+                                                                </select>
+                                                                <select class="select-arrow" ng-model="arrow.selectedInt" name="oInt" id="oInt">
+                                                                    <optgroup label="Interventions">
+                                                                        <option ng-repeat="oI in intVar" value="{{oI.name}}">{{oI.name}}</option>
+                                                                    </optgroup>
+                                                                </select> 
+                                                                <img class="add-arrow-btn" ng-click="arrowGenerate(arrow.selectedKey, arrow.selectedInt)" src="./Static/submitArrowLogo.png" alt="Submit">
+                                                            </div>
+                                                            
+                                                        
+                                                            <table class="arrow-table" border = "1">
+                                                            <tr>
+                                                                <th>LHS</th>
+                                                                <th>RHS</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                            <tr ng-repeat="arrow in arrows">
+                                                                <td>
+                                                                    <span ng-show="!arrow.editing">{{arrow.lhs}}</span>
+                                                                    <input ng-show="arrow.editing" type="text" ng-model="arrow.lhs" ng-blur="saveArrow(arrow)">
+                                                                </td>
+                                                                <td>
+                                                                    <span ng-show="!arrow.editing">{{arrow.rhs}}</span>
+                                                                    <input ng-show="arrow.editing" type="text" ng-model="arrow.rhs" ng-blur="saveArrow(arrow)">
+                                                                </td>
+                                                                <td>
+                                                                    <button ng-click="editArrow(arrow)">Edit</button>
+                                                                    <button ng-click="deleteArrow($index)">Delete</button>
+                                                                </td>
+                                                            </tr>
+                                                            </table>
+                                
+                                                            <img src="./Static/doneAddingArrows.png" style="align-self: centre ;" alt="Done with adding Arrows" ng-click="arrowEditingEnd()">
+                                                    </div> 
+                                                        
+                                                    </span>
+                                            
+                                
+                                
+                                
+                                                <div class="sustain-plan section">
+                                                    <div class="section-title">Sustain Plan</div>
+                                                    <table>
+                                                        <tr>
+                                                            <th>Activity to sustain</th>
+                                                            <th>Owner</th>
+                                                            <th>Sustain method and frequency</th>
+                                                            <th>Report to</th>
+                                                        </tr>
+                                                        <tr ng-repeat="i in sustainPlan">
+                                                            <div>
+                                                                <th ng-click="editSustainPlan(i,'activity')">
+                                                                    {{i.activity.name}}
+                                                                    <span ng-show="i.activity.editing">
+                                                                        <input type="text"  ng-model="i.activity.name" ng-blur="saveSustainPlan(i,'activity')">
+                                                                    </span>
+                                                                </th>
+                                                                <th ng-click="editSustainPlan(i,'owner')">
+                                                                    {{i.owner.name}}
+                                                                    <span ng-show="i.owner.editing">
+                                                                        <input type="text"  ng-model="i.owner.name" ng-blur="saveSustainPlan(i,'owner')">
+                                                                    </span>
+                                                                </th>
+                                                                <th ng-click="editSustainPlan(i, 'sustainMethod')">
+                                                                    {{i.sustainMethod.name}}
+                                                                    <span ng-show="i.sustainMethod.editing">
+                                                                        <input type="text"  ng-model="i.sustainMethod.name" ng-blur="saveSustainPlan(i,'sustainMethod')">
+                                                                    </span>
+                                                                </th>
+                                                                <th class="delete-reportTo-main" ng-click="editSustainPlan(i, 'reportTo')">
+                                                                    {{i.reportTo.name}}
+                                                                    <span ng-show="i.reportTo.editing">
+                                                                        <input type="text"  ng-model="i.reportTo.name" ng-blur="saveSustainPlan(i,'reportTo')">
+                                                                    </span>
+                                                                    <span ng-show="!i.activity.editing && !i.owner.editing && !i.sustainMethod.editing && !i.reportTo.editing">
+                                                                        <img class="delete-reportTo" ng-show="showButtons" src = "./Static/Delete_icon.svg" ng-click = "deleteSustainPlan(i)" ></img>
+                                                                    </span>
+                                                                </th>
+                                                            </div>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                    <img ng-show="showButtons" src="./Static/addbelowIcon.png" alt="Add Below" style="height: 50px; width: 50px ; align-self: center;" ng-click="addSustainPlan()"></img>
+                                                    
+                                                    <div class="instruction-flexbar">
+                                                        <div class="reliability-level">
+                                                            <p>Reliability Level:</p>
+                                                            <ol>
+                                                                <li>Individuals: Feedback, checklists, training, basic standards</li>
+                                                                <li>Procedures: Embedded standard work, reminders, constraints</li>
+                                                                <li>Systems: Process design, fail safes, physical layout, built-in feedback, automated
+                                                                    systems, concentration of responsibility</li>
+                                                            </ol>
+                                                        </div>
+                                                        <div>
+                                                            <p>Maturity Bars:</p>
+                                                            <ul>
+                                                                <li>0: Untested idea </li>
+                                                                <li>1: Early test / PDCA </li>
+                                                                <li>2: Multiple PDCAs </li>
+                                                                <li>3: Early implementation </li>
+                                                                <li>4: Working well in operation </li>
+                                                            </ul>
+                                                
+                                                        </div>
+                                                        <div class="maturity-bars">
+                                                            <progress class="bar" id="file" value="0" max="100"> 32% </progress><br>
+                                                            <progress id="file" class="bar" value="25" max="100"> 32% </progress><br>
+                                                            <progress id="file" class="bar" value="50" max="100"> 32% </progress><br>
+                                                            <progress id="file" class="bar" value="75" max="100"> 32% </progress><br>
+                                                            <progress id="file" class="bar" value="100" max="100"> 32% </progress>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        <img class="downBt" src="./Static/downloadButton.png" ng-click="downloadPDF()" alt="Click to Download" >
+                                        <h1>When you click Download all the buttons will be hidden for download</h1> 
+                                    </div>
+                                </div>
+                                
+
+
+                            <!-- SlideShowEdit Page -->
+                            <div ng-show="visible.slideEditActive" class="about">
+                                <div class="title"></div>
+                                <div class="section">
+                                    <div class="section-title">SlideShow Editing</div>
+                                    <p>This is a slideshow Editing page</p>
                                 </div>
                             </div>
-                        </div>
+                            <!--End of slideEditActive-->
+
+
+
+                            <!-- SlideShowActive Page -->
+                            <div ng-show="visible.slideShowActive" class="about">
+                                <div class="title"></div>
+                                <div class="section">
+                                    <div class="section-title">SlideShow</div>
+                                    <p>This is a slideshow </p>
+                                </div>
+                            </div>
+
+
+
+                            <!--Common Footer for the pages-->
+                                <footer class="footer fade-in-footer">
+                                    <div class="footer-section">
+                                        <h3>About Us</h3>
+                                        <p>We are Raghava, a team of dedicated students, working on innovative solutions to improve the lives of healthcare professionals.</p>
+                                    </div>
+                                    <div class="footer-section">
+                                        <h3>Contact Us</h3>
+                                        <p>Email: vmtejusksit@gmail.com</p>
+                                        <p>Phone: +91 7892287800</p>
+                                    </div>
+                                    <div class="footer-section">
+                                        <h3>Feedback</h3>
+                                        <p>Your feedback is valuable to us. Please <a href="feedback.html">click here</a> to provide your feedback.</p>
+                                    </div>
+                                    <div class="footer-section">
+                                        <h3>KSIT Website</h3>
+                                        <p><a href="https://www.ksit.ac.in" target="_blank">Visit KSIT Website</a></p>
+                                    </div>
+                                </footer>
+                            
+                            <!--End of slideShowActive-->
+
                     </div>
-                    
-                    
-                <img class="downBt" src="./Static/downloadButton.png" ng-click="downloadPDF()" alt="Click to Download" >
-                <h1>When you click Download all the buttons will be hidden for download</h1> 
-            </div>
-            
-        </div>
+        
     </body>
 
 </html>
