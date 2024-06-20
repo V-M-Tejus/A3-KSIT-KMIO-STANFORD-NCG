@@ -292,11 +292,23 @@ app.controller("myCtrl", function ($scope) {
 
 
   $scope.graphs = [
-    { id: 1, defaultSrc: "./Static/Screenshot 2024-06-02 151729.png", altText: "Run Chart" },
-    { id: 2, defaultSrc: "./Static/1.png", altText: "Flow Chart" },
-    { id: 3, defaultSrc: "./Static/2.png", altText: "Another Chart" },
-    { id: 4, defaultSrc: "./Static/3.png", altText: "Fourth Chart" }
+    { id: 1, defaultSrc: "./Static/Runchart.png", altText: "Run Chart" },
+    { id: 2, defaultSrc: "./Static/flowchart.png", altText: "Flow Chart" },
+    { id: 3, defaultSrc: "./Static/2.png", altText: "Fishbone Diagram" },
+    { id: 4, defaultSrc: "./Static/3.png", altText: "Pareto Diagram" },
+    { id: 5, defaultSrc: "./Static/4.png", altText: "twoByTwo Chart" }
 ];
+
+$scope.graph4 = {active:false};
+$scope.graph4activate = function(){
+  if($scope.graph4.active === false){
+    $scope.graph4 = {active:true}
+  }
+  else{
+    $scope.graph4 = {active:false}
+}
+  };
+  
 
 });
 

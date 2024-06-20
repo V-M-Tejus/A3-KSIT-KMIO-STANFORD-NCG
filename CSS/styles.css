@@ -28,7 +28,7 @@ body {
 
 .container {
   width: 42cm;
-  height: 29.7cm;
+  height: 32.5cm;
   padding: 20px;
   box-sizing: border-box;
   border: 1px solid #000;
@@ -322,7 +322,7 @@ td {
 }
 
 
-.imageContainer{
+.imageContainer, .flexKarnaHai{
   width: 379.25px;
   height: 220px;
   display: flex;
@@ -679,6 +679,13 @@ background-color: #00000041;
 margin-bottom: 20px;
 }
 
-.flexKarnaHai {
+.graph-flex, .analysis-flex {
+  width: (379.25*2)px;
+  height: 220px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
+
+

@@ -135,11 +135,12 @@
                                                 </div>
                                                 </div>
                                                 <div class="section">
-                                                <div class="section-title">Analysis</div>
+                                                <div ng-click = "graph4activate()" class="section-title">Analysis</div>
                                                 <div class="analysis-flex">
-                                                    <div class="flexKarnaHai" ng-repeat="graph in graphs.slice(2)">
+                                                    <div class="flexKarnaHai" ng-repeat="graph in graphs.slice(2) | limitTo: 2">
                                                         <image-uploader id="{{graph.id}}" default-src="{{graph.defaultSrc}}" alt-text="{{graph.altText}}"></image-uploader>
                                                     </div>
+                                                    <div ng-show = "graph4.active" class="" ng-repeat = "graph in graphs.slice(4)"></div>
                                                 </div>
                                                 </div>
                                             </div>
