@@ -292,11 +292,11 @@ app.controller("myCtrl", function ($scope) {
 
 
   $scope.graphs = [
-    { id: 1, defaultSrc: "./Static/Runchart.png", altText: "Run Chart" },
-    { id: 2, defaultSrc: "./Static/flowchart.png", altText: "Flow Chart" },
-    { id: 3, defaultSrc: "./Static/2.png", altText: "Fishbone Diagram" },
-    { id: 4, defaultSrc: "./Static/3.png", altText: "Pareto Diagram" },
-    { id: 5, defaultSrc: "./Static/4.png", altText: "twoByTwo Chart" }
+    { id: 1, defaultSrc: "../Static/Runchart.png", altText: "Run Chart" },
+    { id: 2, defaultSrc: "../Static/flowchart.png", altText: "Flow Chart" },
+    { id: 3, defaultSrc: "../Static/Fishbone Analysis.png", altText: "Fishbone Diagram" },
+    { id: 4, defaultSrc: "../Static/Pareto Diagram.jpeg", altText: "Pareto Diagram" },
+    { id: 5, defaultSrc: "../Static/TwoByTwoChart.png", altText: "twoByTwo Chart" }
 ];
 
 $scope.graph4 = {active:false};
@@ -327,7 +327,7 @@ app.directive('imageUploader', function() {
       template: `
           <div class="graph" ng-click="openFilePicker()">
               <div class="imageContainer">
-                  <img id="uploadedImage{{id}}" ng-src="{{uploadedImageSrc}}" alt="{{altText}}">
+                  <img id="uploadedImage{{id}}" ng-src="{{uploadedImageSrc}}" >
                   <input type="file" id="imageInput{{id}}" style="display:none" accept="image/*" onchange="angular.element(this).scope().fileChanged(event)">
                   <img class="run-chart" id="run-chart{{id}}" ng-src="{{defaultSrc}}" alt="{{altText}}">   
               </div>

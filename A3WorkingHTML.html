@@ -140,7 +140,11 @@
                                                     <div class="flexKarnaHai" ng-repeat="graph in graphs.slice(2) | limitTo: 2">
                                                         <image-uploader id="{{graph.id}}" default-src="{{graph.defaultSrc}}" alt-text="{{graph.altText}}"></image-uploader>
                                                     </div>
-                                                    <div ng-show = "graph4.active" class="" ng-repeat = "graph in graphs.slice(4)"></div>
+                                                    <!--To show only when clicked on Analysis -->
+                                                    <div class = "flexKarnaHai" ng-show = "graph4.active"  ng-repeat = "graph in graphs.slice(4)">
+                                                        <image-uploader id="{{graph.id}}" default-src="{{graph.defaultSrc}}" alt-text="{{graph.altText}}"></image-uploader>
+                                                    </div>
+                                                    <!--End of hidden component on click-->
                                                 </div>
                                                 </div>
                                             </div>
