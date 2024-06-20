@@ -38,12 +38,12 @@ body {
   aspect-ratio: 1.414/1;
 }
 
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 20px;
-}
+} */
 
 .header img {
   height: 50px;
@@ -66,7 +66,7 @@ body {
 }
 
 .section-title {
-  background-color: #496888;
+  background-color: #8B2331;
   color: #fff;
   padding: 5px;
   font-weight: bold;
@@ -271,21 +271,23 @@ td {
 }
 
 .personal-logo {
-  height: 85px;
-  width: 150px;
+  /* height: 85px; */
+  /* width: 150px; */
   justify-content: space-between;
-  align-items: center;
-  margin-right: 150px;
+  align-items: center !important;
+  /* margin-right: 150px; */
 }
 
-.header {
+
+
+/* .header {
   display: flex;
-}
+} */
 
 .select-arrow {
   height: 45px;
   width: 350px;
-  border: solid 3px #8c1c1c;
+  border: solid 3px #8B2331;
 }
 
 .arrow-main {
@@ -303,10 +305,10 @@ td {
 .arrow-table {
   margin-top: 5px;
   width: 704px;
-  border: solid 3px #8c1c1c;
+  border: solid 3px #8B2331;
 }
 .arrow-table th {
-  background-color: #8c1c1c;
+  background-color: #8B2331;
   color: #fff;
 }
 
@@ -447,10 +449,10 @@ body {
 
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #2c3e50; /* Dark blue-gray */
+  background-color: #f5f5f5; /* Dark blue-gray */
   opacity: 0;
   animation: fadeIn 2s forwards;
   animation-delay: 0.5s;
@@ -753,7 +755,7 @@ margin-bottom: 20px;
 }
 
 .slidetitle1 {
-  color: #8c1c1c;
+  color: #8B2331;
   font-size: 35;
 }
 
@@ -761,7 +763,7 @@ margin-bottom: 20px;
   height: 4px;
   border: 0;
   box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.slide5);
-  background-color: #8c1c1c;
+  background-color: #8B2331;
   border-radius: 4px;
 }
 
@@ -817,7 +819,7 @@ margin-bottom: 20px;
 
 .slidepage-header {
   width:auto;
-  background-color: #8c1c1c;
+  background-color: #8B2331;
   padding: 20px 40PX;
   display: flex;
   justify-content: space-between;
@@ -859,7 +861,7 @@ margin-bottom: 20px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-/ Page 2 /
+
 
 .slidecontainer2 {
   display: flex;
@@ -870,3 +872,4 @@ margin-bottom: 20px;
   font-size: 20px;
   font-weight: bold;
 }
+
