@@ -725,7 +725,11 @@ margin-bottom: 20px;
   min-height: 93vh;
   width: 90vw;
   background-color: white;
+  display: none;
   
+}
+.slidenxtSection.active {
+  display: block; /* Show the active slide */
 }
 
 .slideheaderInfo {
@@ -873,3 +877,140 @@ margin-bottom: 20px;
   font-weight: bold;
 }
 
+.slidefoot {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 90%;
+  background-color: white;
+  border-top: 1px solid #8c1c1c;
+}
+
+.slideslideshowuttons {
+  display: flex;
+  gap: 10px;
+}
+
+.slidepageNo {
+  padding-top: 3px;
+  margin-left: 1000px;
+  width: 38px;
+  height: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+ 
+.missionhero {
+  background: #50b3a2;
+  color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.missionhero h2 {
+  margin: 0;
+}
+
+.missioncontent-card {
+  display: flex;
+  justify-content: space-around;
+  padding: 80px;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: -10px;
+  background: #fff;
+}
+
+.missioncard {
+  background: transparent;
+  width: 30%;
+  text-align: center;
+  perspective: 1000px;
+  position: relative;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.missioncard-inner {
+  position: relative;
+  width: 100%;
+  padding-top: 80%; /* Aspect ratio for maintaining height */
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.missioncard:hover .missioncard-inner {
+  transform: rotateY(180deg);
+}
+
+.missioncard-front, .missioncard-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.missioncard-front {
+  background: /*#f4f4f4*/#e8f9f6;
+  color: #000;
+}
+
+.missioncard-back {
+  background: /*#f4f4f4*/#e8f9f6;
+  transform: rotateY(180deg) translateY(20px); /* Combine transforms */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  color: #000;
+}
+
+.missioncard:hover .missioncard-back {
+  opacity: 1; /* Show the card-back on hover */
+  transform: rotateY(180deg) translateY(0); /* Move to the original position */
+}
+
+.missioncard-back h3, .missioncard-back p, .missioncard-back ul {
+  opacity: 0; /* Initially hidden */
+}
+
+.missioncard:hover .missioncard-back h3 {
+  animation: fadeUp 0.3s ease-in-out 0.5s forwards; /* Fade up after 0.9s */
+}
+
+.missioncard:hover .missioncard-back p, .missioncard:hover .missioncard-back ul {
+  animation: fadeUp 0.6s ease-in-out 1s forwards; /* Fade up after 1.5s */
+}
+
+.missioncard-back ul {
+  list-style: none; /* Remove bullet points */
+  padding: 4px; /* Remove any default padding */
+}
+
+
+@keyframes fadeUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

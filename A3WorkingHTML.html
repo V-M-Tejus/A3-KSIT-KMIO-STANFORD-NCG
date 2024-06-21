@@ -9,6 +9,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="./JS/script.js"></script>
+    <script src="./JS/script1.js"></script>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
                     <button class="dropbtn">Try it out</button>
                     <div class="dropdown-content">
                         <a href="#" ng-click="navigate('tryItOut')">A-3 Poster Editor</a>
-                        <a href="#" ng-click="navigate('slideEdit')">Presentation Editor</a>
+                        <!-- <a href="#" ng-click="navigate('slideEdit')">Presentation Editor</a> -->
                     </div>
                 </div>
                 <a href="#" ng-click="navigate('slideShow')">Slide Show</a> <!--Added new link-->
@@ -60,6 +61,27 @@
 
                 </div>
             </div>
+            <footer class="footer fade-in-footer">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We are Raghava, a team of dedicated students, working on innovative solutions to improve the lives of
+                        healthcare professionals.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: vmtejusksit@gmail.com</p>
+                    <p>Phone: +91 7892287800</p>
+                </div>
+                <div class="footer-section">
+                    <h3> <a href="https://forms.gle/P44usni3P1BoLvT49" >Feedback </a></h3>
+                    <p>Your feedback is valuable to us. Please <a href="https://forms.gle/P44usni3P1BoLvT49">click here</a> to provide your
+                        feedback.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>KSIT Website</h3>
+                    <p><a href="https://www.ksit.ac.in" target="_blank">Visit KSIT Website</a></p>
+                </div>
+            </footer>
         </div>
         <!--End of Home Page-->
 
@@ -67,10 +89,74 @@
         <div ng-show="visible.aboutInitActive" class="about-init">
             <div class="title"></div>
             <div class="section">
-                <div class="section-title">Our Mission</div>
-                <p>This initiative aims to improve healthcare through innovative solutions and research. Our team is
-                    dedicated to achieving measurable outcomes that benefit patients and medical professionals.</p>
+                <main>
+                    <section class="missionhero">
+                        <h2>Mission, Vision, and Core Values</h2>
+                    </section>
+                    <section class="missioncontent-card">
+                        <div class="missioncard">
+                            <div class="missioncard-inner">
+                                <div class="missioncard-front">
+                                    <h3>Mission</h3>
+                                </div>
+                                <div class="missioncard-back">
+                                    <h3>Mission</h3>
+                                    <p>Our mission is to facilitate cutting-edge cancer research and provide a seamless platform for doctors to present their findings, fostering a collaborative environment for innovation and knowledge sharing.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="missioncard">
+                            <div class="missioncard-inner">
+                                <div class="missioncard-front">
+                                    <h3>Vision</h3>
+                                </div>
+                                <div class="missioncard-back">
+                                    <h3>Vision</h3>
+                                    <p>We envision a world where cancer research is accelerated through advanced technology and collaboration, leading to improved patient outcomes and a deeper understanding of cancer treatment and prevention.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="missioncard">
+                            <div class="missioncard-inner">
+                                <div class="missioncard-front">
+                                    <h3>Core Values</h3>
+                                </div>
+                                <div class="missioncard-back">
+                                    <h3>Core Values</h3>
+                                    <ul>
+                                        <li>Integrity</li>
+                                        <li>Innovation</li>
+                                        <li>Collaboration</li>
+                                        <li>Excellence</li>
+                                        <li>Compassion</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                  </main>
             </div>
+            <footer class="footer fade-in-footer">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We are Raghava, a team of dedicated students, working on innovative solutions to improve the lives of
+                        healthcare professionals.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: vmtejusksit@gmail.com</p>
+                    <p>Phone: +91 7892287800</p>
+                </div>
+                <div class="footer-section">
+                    <h3> <a href="https://forms.gle/P44usni3P1BoLvT49" >Feedback </a></h3>
+                    <p>Your feedback is valuable to us. Please <a href="https://forms.gle/P44usni3P1BoLvT49">click here</a> to provide your
+                        feedback.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>KSIT Website</h3>
+                    <p><a href="https://www.ksit.ac.in" target="_blank">Visit KSIT Website</a></p>
+                </div>
+            </footer>
         </div>
         <!--End of About Initiative Page-->
 
@@ -389,19 +475,41 @@
             <br>
             <img class="downBt" src="./Static/Done-Icon.svg" ng-click="downloadPDF()" alt="Click to Download">
             <h1>Click When Done</h1>
+
+            <footer class="footer fade-in-footer">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We are Raghava, a team of dedicated students, working on innovative solutions to improve the lives of
+                        healthcare professionals.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: vmtejusksit@gmail.com</p>
+                    <p>Phone: +91 7892287800</p>
+                </div>
+                <div class="footer-section">
+                    <h3> <a href="https://forms.gle/P44usni3P1BoLvT49" >Feedback </a></h3>
+                    <p>Your feedback is valuable to us. Please <a href="https://forms.gle/P44usni3P1BoLvT49">click here</a> to provide your
+                        feedback.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>KSIT Website</h3>
+                    <p><a href="https://www.ksit.ac.in" target="_blank">Visit KSIT Website</a></p>
+                </div>
+            </footer>
         </div>
 
 
 
         <!-- SlideShowEdit Page -->
-        <div ng-show="visible.slideEditActive" class="about">
+        <!-- <div ng-show="visible.slideEditActive" class="about">
             <div class="title"></div>
             <div class="section">
                 <div class="section-title">SlideShow Editing</div>
                 <p>This is a slideshow Editing page</p>
             </div>
-        </div>
-        <!--End of slideEditActive-->
+        </div> -->
+        <!--End of slideEditActive -->
 
 
 
@@ -409,43 +517,36 @@
         <div ng-show="visible.slideShowActive" class="about">
             <div class="title"></div>
             <div class="section">
-                <div class="section-title">SlideShow</div>
-                <div class="main-content-slides">
+                <div class="section-title" onclick="toggleFullScreen()">Click for SlideShow</div>
 
-                    <div class="slideflexBody">
-                        
+                <div class="main-content-slides"> <!--Main content from here to change-->
+
+                    <div id="presentation" class="slideflexBody">
                         <br>
                         <div class="slidebodyLCRFlex">
-                            <section class="slidesectionBleft">
-                                This is section left
+                            <section style="width: 4vw;" class="slidesectionBleft">
+                                <!-- this is asp -->
                             </section>
                             <section style="font-family: Times New Roman, Times, serif;" class="slidesectionBCenter">
-
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection active" id="slide1">
                                     <div class="header">
                                         <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
-                                        <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
-                                                src="./Static/Kidwai_Memorial_Institute_of_Oncology_Logo.svg.png"></div>
+                                        <div class="personal-logo"><img style="width: 6vw; height: 10vh;" src="./Static/Kidwai_Memorial_Institute_of_Oncology_Logo.svg.png"></div>
                                         <div class="ncg-logo"><img src="./Static/EquipIndiaLogo.png" alt="National Cancer Grid"></div>
                                     </div>
                                     <hr class="slidehrRule">
-
                                     <div class="slideparentSection">
                                         <section class="slidelhsPage1">
                                             <h3 class="slidetitle1">Quality Improvement Project 2022</h3>
                                             <div>
                                                 <br>
                                                 <br>
-                                                <p class="slidepara1">KIDWAI MEMORIAL INSTITUTE OF ONCOLOGY, BENGALURU
-                                                </p>
+                                                <p class="slidepara1">KIDWAI MEMORIAL INSTITUTE OF ONCOLOGY, BENGALURU</p>
                                             </div>
                                         </section>
                                         <section class="sliderhsPage1"><img src="./Static/Slides/Slide1.jpg" alt=""></section>
                                     </div>
-
-
-
-
+                                </section>
                                     <!-- <footer class="slidefoot">
                                         <div class="slideslideshowuttons">
                                             <button class="slidebtn">Previous</button>
@@ -458,11 +559,11 @@
                                             1
                                         </div>
                                     </footer> -->
-                                </section>
+                                
 
 
                                 <!-- Page 2 -->
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide2">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -483,7 +584,7 @@
 
                                 <!-- Page 3 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide3">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -527,7 +628,7 @@
 
                                 <!-- Page 4 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide4">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -550,7 +651,7 @@
 
                                 <!-- Page 5 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide5">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -603,7 +704,7 @@
 
                                 <!-- Page 6 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide6">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -642,7 +743,7 @@
 
                                 <!-- Page 7 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide7">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -663,7 +764,7 @@
 
                                 <!-- Page 8 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide8">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -684,7 +785,7 @@
 
                                 <!-- Page 9 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide9">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -699,7 +800,7 @@
 
                                 <!-- Page 10 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide10">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -721,7 +822,7 @@
 
                                 <!-- Page 11 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide11">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -763,7 +864,7 @@
 
                                 <!-- Page 12 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide12">
                                     <div class="header">
                                         <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                                         <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -781,7 +882,7 @@
 
                                 <!-- Page 13 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection " id="slide13">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -817,7 +918,7 @@
 
                                 <!-- Page 14 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide14">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -850,7 +951,7 @@
 
                                 <!-- Page 15 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide15">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -874,7 +975,7 @@
 
                                 <!-- Page 16 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide16">
                                     <div class="header">
                                         <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                                         <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -908,7 +1009,7 @@
 
                                 <!-- Page 17 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide17">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -939,7 +1040,7 @@
 
                                 <!-- Page 18 -->
 
-                                <section class="slidenxtSection">
+                                <section class="slidenxtSection" id="slide18">
                                     <div class="header">
                     <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
                     <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
@@ -951,24 +1052,58 @@
                                             <img style="width: 90vw;" src="./Static/Slides/Thank-You.png" alt="">
                                     </div>
                                 </section>
-
+                                <div class="slidefoot">
+                                    <div class="slideslideshowuttons">
+                                        <button class="slidebtn" onclick="navigateSlide(-1)">Previous</button>
+                                        <button class="slidebtn" onclick="navigateSlide(1)">Next</button>
+                                        <!-- <button class="slidebtn" onclick="toggleFullScreen()">Fullscreen</button> -->
+                                        <button class="slidebtn" onclick="endPresentation()">End</button>
+                                    </div>
+                                    <div class="slidepageNo" id="slideNumber">1</div>
+                                </div>
+                            </section>
+                            </section>
                             </section>
                             <section class="slidesectionBRight">
-                                This is section right
+                                <!-- <div class="slideslideshowuttons">
+                                    <button class="slidebtn" onclick="navigateSlide(-1)">Previous</button>
+                                    <button class="slidebtn" onclick="navigateSlide(1)">Next</button>
+                                    <button class="slidebtn" onclick="toggleFullScreen()">Fullscreen</button>
+                                    <button class="slidebtn" onclick="endPresentation()">End</button>
+                                </div>
+                                <div class="slidepageNo" id="slideNumber">1</div> -->
                             </section>
-                        </div>
-
-                        </section>
                     </div>
                 </div>
             </div>
+            <footer class="footer fade-in-footer">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We are Raghava, a team of dedicated students, working on innovative solutions to improve the lives of
+                        healthcare professionals.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: vmtejusksit@gmail.com</p>
+                    <p>Phone: +91 7892287800</p>
+                </div>
+                <div class="footer-section">
+                    <h3> <a href="https://forms.gle/P44usni3P1BoLvT49" >Feedback </a></h3>
+                    <p>Your feedback is valuable to us. Please <a href="https://forms.gle/P44usni3P1BoLvT49">click here</a> to provide your
+                        feedback.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>KSIT Website</h3>
+                    <p><a href="https://www.ksit.ac.in" target="_blank">Visit KSIT Website</a></p>
+                </div>
+            </footer>
         </div>
         <!--End of SlideShowActive-->
 
 
 
         <!--Common Footer for the pages-->
-        <footer class="footer fade-in-footer">
+        <!-- <footer class="footer fade-in-footer">
             <div class="footer-section">
                 <h3>About Us</h3>
                 <p>We are Raghava, a team of dedicated students, working on innovative solutions to improve the lives of
@@ -988,7 +1123,7 @@
                 <h3>KSIT Website</h3>
                 <p><a href="https://www.ksit.ac.in" target="_blank">Visit KSIT Website</a></p>
             </div>
-        </footer>
+        </footer> -->
 
         <!--End of slideShowActive-->
 
