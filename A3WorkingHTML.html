@@ -303,7 +303,7 @@
                                     <th>Report to</th>
                                 </tr>
                                 <tr ng-repeat="i in sustainPlan">
-                                    <div>
+                                    <div style="font-size: 5px;">
                                         <th ng-click="editSustainPlan(i,'activity')">
                                             {{i.activity.name}}
                                             <span ng-show="i.activity.editing">
@@ -326,10 +326,16 @@
                                             </span>
                                         </th>
                                         <th class="delete-reportTo-main" ng-click="editSustainPlan(i, 'reportTo')">
-                                            {{i.reportTo.name}}
+                                            {{i.reportTo.name}}<br><br><br><br>
                                             <span ng-show="i.reportTo.editing">
                                                 <input type="text" ng-model="i.reportTo.name"
                                                     ng-blur="saveSustainPlan(i,'reportTo')">
+                                                    <span
+                                                    ng-show="!i.activity.editing && !i.owner.editing && !i.sustainMethod.editing && !i.reportTo.editing">
+                                                    <img class="delete-reportTo" ng-show="showButtons"
+                                                        src="./Static/Delete_icon.svg"
+                                                        ng-click="deleteSustainPlan(i)"></img>
+                                                </span>
                                             </span>
                                             <span
                                                 ng-show="!i.activity.editing && !i.owner.editing && !i.sustainMethod.editing && !i.reportTo.editing">
@@ -380,8 +386,9 @@
 
 
             </div>
-            <img class="downBt" src="./Static/downloadButton.png" ng-click="downloadPDF()" alt="Click to Download">
-            <h1>When you click Download all the buttons will be hidden for download</h1>
+            <br>
+            <img class="downBt" src="./Static/Done-Icon.svg" ng-click="downloadPDF()" alt="Click to Download">
+            <h1>Click When Done</h1>
         </div>
 
 
@@ -724,13 +731,13 @@
                                     <hr class="slidehrRule">
                                     <div class="slideparentSection">
                                         <section class="slidelhsPage1">
-                                            <p style="font-weight: bold; color: #8c1c1c; font-size: 27px;">
+                                            <p style="font-size: xx-large; font-weight: bold; color: #8c1c1c; font-size: 27px;">
                                                 Interventions</p>
-                                            <p style="font-weight: bold; color: #8c1c1c; font-size: 27px;">
+                                            <p style="font-size: xx-large; font-weight: bold; color: #8c1c1c; font-size: 27px;">
                                                 Specialist
                                                 consultation at KMIO:
                                             </p>
-                                            <p style="text-align: justify; font-size:x-large; font-family: Times New Roman, Times, serif;">
+                                            <p style="margin-left: 20px; text-align: justify; font-size:xx-large; font-family: Times New Roman, Times, serif;">
                                                 The patients had to visit other super specialty hospitals like Jayadeva
                                                 Institute of
                                                 Cardiology, and Institute of Nephro-Urology for cardiac and renal
@@ -758,14 +765,16 @@
 
                                 <section class="slidenxtSection">
                                     <div class="header">
-                    <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
-                    <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
-                            src="./Static/Kidwai_Memorial_Institute_of_Oncology_Logo.svg.png"></div>
-                    <div class="ncg-logo"><img src="./Static/EquipIndiaLogo.png" alt="National Cancer Grid"></div>
-                </div>
+                                        <div class="stanford-logo"><img src="./Static/Stanford-Medicine.png" alt="Stanford Medicine"></div>
+                                        <div class="personal-logo"><img style="width: 6vw; height: 10vh;"
+                                                src="./Static/Kidwai_Memorial_Institute_of_Oncology_Logo.svg.png"></div>
+                                        <div class="ncg-logo"><img src="./Static/EquipIndiaLogo.png" alt="National Cancer Grid"></div>
+                                    </div>
                                     <hr class="slidehrRule">
                                     <div class="slideparentSection">
+                                    <div>
                                         <img style="margin-left:30px;" src="./Static/Slides/slide12.png" alt="">
+                                    </div>
                                     </div>
                                 </section>
 
@@ -781,24 +790,27 @@
                 </div>
                                     <hr class="slidehrRule">
                                     <div class="slideparentSection">
-                                        <p style="font-weight: bold; color: rgb(212, 0, 0); font-size: 27px;">Outcome of
+                                        <div style="text-align: left !important;  font-size: xx-large; margin-left: 35px;">
+                                           <p style="color: rgb(212, 0, 0); font-size: 35px; font-weight: bold;">Outcome of
                                             Project</p>
-                                        <ul>
-                                            <li>The waiting Period for treatment initiation of lung cancer has reduced
-                                                from 26 days to
-                                                16 days. For Colorectal cancer the treatment initiation time has reduced
-                                                from 28 days to
-                                                17 days.
+                                                <ul>
+                                                    <li>The waiting Period for treatment initiation of lung cancer has reduced
+                                                        from 26 days to
+                                                        16 days. For Colorectal cancer the treatment initiation time has reduced
+                                                        from 28 days to
+                                                        17 days.
 
-                                            </li>
-                                            <li>The economic and Social Burden on patient and attenders has reduced due
-                                                to less number
-                                                of hospital visits and decreased duration of stay for out station
-                                                patients.
-                                            </li>
-                                            <li>Maximum utilization of hospital resources
-                                            </li>
-                                        </ul>
+                                                    </li>
+                                                    <li>The economic and Social Burden on patient and attenders has reduced due
+                                                        to less number
+                                                        of hospital visits and decreased duration of stay for out station
+                                                        patients.
+                                                    </li>
+                                                    <li>Maximum utilization of hospital resources
+                                                    </li>
+                                                </ul> 
+                                        </div>
+                                        
                                     </div>
                                 </section>
 
@@ -814,9 +826,10 @@
                 </div>
                                     <hr class="slidehrRule">
                                     <div class="slideparentSection">
-                                        <p style="font-weight: bold; color: rgb(212, 0, 0); font-size: 27px;">Additional
+                                        <div>
+                                            <p style="align-items: center; font-weight: bold; color: rgb(212, 0, 0); font-size: 35px;">Additional
                                             Results</p>
-                                        <ul>
+                                        <ul style="margin-left: 30px; font-size: 45px; text-align: center;">
                                             <li>Waiting time for treatment initiation for all other subsites of cancer
                                                 has reduced
                                                 because of the interventions.
@@ -829,6 +842,8 @@
 
 
                                         </ul>
+                                        </div>
+                                        
                                     </div>
                                 </section>
 
@@ -844,48 +859,15 @@
                 </div>
                                     <hr class="slidehrRule">
                                     <div class="slideparentSection">
-                                        <p style="font-weight: bold; color: rgb(212, 0, 0); font-size: 27px;">
+                                        <div style="margin-left: 25px !important ;">
+                                           <p style="font-weight: bold; color: rgb(212, 0, 0); font-size: 27px;">
                                             Sustainability: Roles
                                             &Responsibility
-                                        </p>
-                                        <table border="1" class="slidepageFifteenTable">
-                                            <tr>
-                                                <th>Activity to Sustain</th>
-                                                <th>Owner</th>
-                                                <th>Sustain method and frequency</th>
-                                                <th>Report to</th>
-                                            </tr>
-                                            <tr>
-                                                <td>Visiting consultants at KMIO</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </table>
+                                        </p> 
+                                        <img  src="./Static/Slides/Slide15.png" alt="">
+                                        </div>
+                                        
+                                        
                                     </div>
                                 </section>
 
@@ -901,22 +883,25 @@
                                     </div>
                                     <hr class="slidehrRule">
                                     <div class="slideparentSection">
-                                        <p style="font-weight: bold; color: rgb(212, 0, 0); font-size: 27px;">Key
+                                        <div>
+                                            <p style="font-weight: bold; color: rgb(212, 0, 0); font-size: 35px;">Key
                                             Learning points from
                                             Project</p>
-                                        <ul>
-                                            <li>If we know the exact cause, it is easy to find the solution.
+                                            <ul style="font-size: 50px; margin-left: 25px;" >
+                                                <li>If we know the exact cause, it is easy to find the solution.
 
-                                            </li>
-                                            <li>The scientific way of identification of root cause helps to convince the
-                                                Administration
-                                                and bring about better changes in the hospital.
-                                            </li>
-                                            <li>Small modifications in the routine procedure will yield good results and
-                                                there by
-                                                improving the patient care.
-                                            </li>
-                                        </ul>
+                                                </li>
+                                                <li>The scientific way of identification of root cause helps to convince the
+                                                    Administration
+                                                    and bring about better changes in the hospital.
+                                                </li>
+                                                <li>Small modifications in the routine procedure will yield good results and
+                                                    there by
+                                                    improving the patient care.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
                                     </div>
                                 </section>
 
@@ -932,20 +917,22 @@
                 </div>
                                     <hr class="slidehrRule">
                                     <div class="slideparentSection">
-                                        <ul>
-                                            <li>Implementation of Phase-II intervention completely.
-                                            </li>
-                                            <li>Sustainability of the modified changes with continuous efforts.
-                                            </li>
-                                            <li>Cost effectiveness (Direct & Indirect) from all the above interventions
-                                                needs to be
-                                                evaluated.
-                                            </li>
-                                            <li>New Projects to be taken up and solve other unforeseen problems.
-                                            </li>
-                                            <li>Constitution and Institutionalization of Quality Circles
-                                            </li>
-                                        </ul>
+                                        <div style=" margin-left: 45px; font-size:45px;">
+                                            <ul>
+                                                <li>Implementation of Phase-II intervention completely.
+                                                </li>
+                                                <li>Sustainability of the modified changes with continuous efforts.
+                                                </li>
+                                                <li>Cost effectiveness (Direct & Indirect) from all the above interventions
+                                                    needs to be
+                                                    evaluated.
+                                                </li>
+                                                <li>New Projects to be taken up and solve other unforeseen problems.
+                                                </li>
+                                                <li>Constitution and Institutionalization of Quality Circles
+                                                </li>
+                                                </ul>
+                                        </div>
                                     </div>
                                 </section>
 
@@ -961,14 +948,7 @@
                 </div>
                                     <hr class="slidehrRule">
                                     <div class="slideparentSection">
-                                        <section class="slidelhsPage1">
-                                            <h1>Thank You</h1>
-                                            <p style="font-size: 25px;">FOR GIVING US THE OPPORTUNITY TO JOIN THE EQUIP
-                                                COMMUNITY</p>
-                                        </section>
-                                        <section class="sliderhsPage1">RHS 25
-                                            <img src="" alt="">
-                                        </section>
+                                            <img style="width: 90vw;" src="./Static/Slides/Thank-You.png" alt="">
                                     </div>
                                 </section>
 
@@ -1000,8 +980,8 @@
                 <p>Phone: +91 7892287800</p>
             </div>
             <div class="footer-section">
-                <h3>Feedback</h3>
-                <p>Your feedback is valuable to us. Please <a href="feedback.html">click here</a> to provide your
+                <h3> <a href="https://forms.gle/P44usni3P1BoLvT49" >Feedback </a></h3>
+                <p>Your feedback is valuable to us. Please <a href="https://forms.gle/P44usni3P1BoLvT49">click here</a> to provide your
                     feedback.</p>
             </div>
             <div class="footer-section">

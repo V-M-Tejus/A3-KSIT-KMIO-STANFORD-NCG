@@ -36,19 +36,19 @@ app.controller("myCtrl", function ($scope) {
 
   //initialization of certain things
 
-  $scope.keyVar = [{ name: "Item 1" }, { name: "Item 2" }, { name: "Item 3" }];
-  $scope.intVar = [{ name: "Item A" }, { name: "Item B" }, { name: "Item C" }];
+  $scope.keyVar = [{ name: "Specialist consultation  at KMIO (Cardiology/Urology)" }, { name: "Smooth Patient Navigation"}, { name: "Adequate Universal Electronic Retrieval of Patient Health Records" },{name:"Patient Counselling Post Initial Visit"},{name:"Segregation of New and Follow Patients"}];
+  $scope.intVar = [{ name: "Arrangement for Visiting Consultants." }, { name: "Compilation of Citizen Charter and it’s Active Dissemination." }, { name: "Mandatory e-Hospital Implementation for all New Patients." },{name:"Adequate Medical and Social Counselling"},{name:"Separate Queues for New Patients"}];
   $scope.projectTitle = [{ name: "Enter Project title", editing: false }];
 
   $scope.problemStatement = [
-    { name: "Enter max 300 characters", editing: false },
+    { name: "Patients Registered with Suspected/Diagnosed Lung Cancer and Colorectal Cancers take an Average of  31 Days to be Started on Treatment.", editing: false },
   ];
 
-  $scope.background = [{ name: "Enter max 400 characters", editing: false }];
+  $scope.background = [{ name: "KMIO, a tertiary cancer care center, faces significant delays in diagnosing and treating lung and colorectal cancer due to heavy workloads, limited manpower, and low patient education levels. Quantifying these delays helps identify factors causing them, allowing targeted improvements for better patient care and timely treatment.", editing: false }];
 
-  $scope.targetState = [{ name: "Enter max 450 characters", editing: false }];
+  $scope.targetState = [{ name: "Reducing treatment initiation time for Lung and Colorectal cancer patients from 31 Days to 14 Days by December 2022 ", editing: false }];
 
-  $scope.currentState = [{ name: "Enter max 100 characters", editing: false }];
+  $scope.currentState = [{ name: "At KMIO, lung cancer treatment starts in 27 days (7-68 days) and colorectal in 26 days (19-42 days).", editing: false }];
 
   $scope.sustainPlan = [
     {
@@ -57,6 +57,38 @@ app.controller("myCtrl", function ($scope) {
       sustainMethod: { name: "Enter Sustain method", editing: false },
       reportTo: { name: "Enter Report To", editing: false },
     },
+    {
+      activity: { name: "Visiting consultants at KMIO", editing: false },
+      owner: { name: "The Medical Superintendent", editing: false },
+      sustainMethod: { name: "Monthly Referral Audits and Discussion in Head of the Departments (HoDs) committee meeting", editing: false },
+      reportTo: { name: "The Director       ", editing: false }
+  },
+  {
+      activity: { name: "Citizen Charter compilation and dissemination. (Citizen Charter shall be released after approval of the Governing Council of the Institute)", editing: false },
+      owner: { name: "The Public Relation Officer", editing: false },
+      sustainMethod: { name: "Patient and Citizen feedback through Institute website. To Update Citizen Charter once in 3 Months or earlier as and when necessary.", editing: false },
+      reportTo: { name: "The Director       ", editing: false }
+  },
+  {
+      activity: { name: "E Hospital Implementation", editing: false },
+      owner: { name: "The Medical Record Officer", editing: false },
+      sustainMethod: { name: "MRD audit once a month and Implementation of Corrective and Preventive Action (CAPA).", editing: false },
+      reportTo: { name: "The Medical Superintendent       ", editing: false }
+  },
+  {
+      activity: { name: "Adequate Medical Counselling and Medico Social Counselling during the first visit of the Patient", editing: false },
+      owner: { name: "The HoDs and Chief Social Welfare Officer", editing: false },
+      sustainMethod: { name: "Monthly New patients satisfaction survey and Implementing CAPA", editing: false },
+      reportTo: { name: "The Medical Superintendent       ", editing: false }
+  },
+  {
+      activity: { name: "Separate Priority Lanes for Newly Registered Patients at all counters", editing: false },
+      owner: { name: "The Resident Medical Officer", editing: false },
+      sustainMethod: { name: "Monthly New Patients’ satisfaction Survey and Implementing CAPA. (Waiting Time at Billing Counters and OPD Counters)", editing: false },
+      reportTo: { name: "The Medical Superintendent       ", editing: false }
+  }
+
+
   ];
 
   $scope.showButtons = true;
@@ -294,7 +326,7 @@ app.controller("myCtrl", function ($scope) {
   $scope.graphs = [
     { id: 1, defaultSrc: "../Static/Runchart.png", altText: "Run Chart" },
     { id: 2, defaultSrc: "../Static/flowchart.png", altText: "Flow Chart" },
-    { id: 3, defaultSrc: "../Static/Fishbone Analysis.png", altText: "Fishbone Diagram" },
+    { id: 3, defaultSrc: "../Static/Fish-Bone.png", altText: "Fishbone Diagram" },
     { id: 4, defaultSrc: "../Static/Pareto Diagram.jpeg", altText: "Pareto Diagram" },
     { id: 5, defaultSrc: "../Static/TwoByTwoChart.png", altText: "twoByTwo Chart" }
 ];
